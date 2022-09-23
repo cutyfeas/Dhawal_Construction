@@ -22,11 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Views\User\Create.cshtml" />
-    <Content Remove="Views\User\Details.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Bricelam.EntityFrameworkCore.Pluralizer" Version="1.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

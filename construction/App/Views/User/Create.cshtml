@@ -1,4 +1,4 @@
-﻿@model App.Entity.TblUser
+﻿@model App.Entity.tbl_user
 
 @{
     Layout = null;
@@ -20,39 +20,39 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
+                <label asp-for="username" class="control-label"></label>
+                <input asp-for="username" class="form-control" />
+                <span asp-validation-for="username" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Roleid" class="control-label"></label>
-                <input asp-for="Roleid" class="form-control" />
-                <span asp-validation-for="Roleid" class="text-danger"></span>
+                <label asp-for="roleid" class="control-label"></label>
+                <input asp-for="roleid" class="form-control" />
+                <span asp-validation-for="roleid" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Createdby" class="control-label"></label>
-                <input asp-for="Createdby" class="form-control" />
-                <span asp-validation-for="Createdby" class="text-danger"></span>
+                <label asp-for="createdby" class="control-label"></label>
+                <input asp-for="createdby" class="form-control" />
+                <span asp-validation-for="createdby" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Updatedby" class="control-label"></label>
-                <input asp-for="Updatedby" class="form-control" />
-                <span asp-validation-for="Updatedby" class="text-danger"></span>
+                <label asp-for="updatedby" class="control-label"></label>
+                <input asp-for="updatedby" class="form-control" />
+                <span asp-validation-for="updatedby" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Createddate" class="control-label"></label>
-                <input asp-for="Createddate" class="form-control" />
-                <span asp-validation-for="Createddate" class="text-danger"></span>
+                <label asp-for="createddate" class="control-label"></label>
+                <input asp-for="createddate" class="form-control" />
+                <span asp-validation-for="createddate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Updateddate" class="control-label"></label>
-                <input asp-for="Updateddate" class="form-control" />
-                <span asp-validation-for="Updateddate" class="text-danger"></span>
+                <label asp-for="updateddate" class="control-label"></label>
+                <input asp-for="updateddate" class="form-control" />
+                <span asp-validation-for="updateddate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

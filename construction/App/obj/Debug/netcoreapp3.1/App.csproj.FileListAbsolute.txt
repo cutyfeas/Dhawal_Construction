@@ -310,7 +310,6 @@ C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\D
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\App.dll
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\App.pdb
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\App.genruntimeconfig.cache
-C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\User\Indexx.cshtml.g.cs
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
@@ -588,3 +587,5 @@ C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\D
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\_adminfooter.cshtml.g.cs
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\_adminheader.cshtml.g.cs
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\_adminsidebar.cshtml.g.cs
+C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\User\Create.cshtml.g.cs
+C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\User\Details.cshtml.g.cs
