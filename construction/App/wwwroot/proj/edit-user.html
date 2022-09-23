@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Constructions App</title>
+
+    <link rel="stylesheet" href="vendors/simplebar/css/simplebar.css">
+    <link rel="stylesheet" href="css/vendors/simplebar.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/examples.css" rel="stylesheet">
+
+    <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sidebar sidebar-dark sidebar-fixed bg-dark-gradient" id="sidebar">
+        <div class="sidebar-brand d-none d-md-flex">
+            <a href="#" class="sidebar-brand-full" width="118" height="46" alt="Construction App">
+                Constructions App
+            </a>
+            <a href="#" class="sidebar-brand-narrow" width="46" height="46" alt="Construction App">
+                Constructions App
+            </a>
+            <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+        </div>
+        <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="">
+                    Apartment and building
+                </a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <span class="nav-icon"></span>
+                            Apartment and building
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <span class="nav-icon"></span>
+                            Apartment Master Data
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-divider"></li>
+            <li class="nav-title">Master Data information</li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Master TYPES
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    LEAF Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Boiler Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    AIR CONDITIONER Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Water Heater Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    RADIATOR Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Curtains Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Suppliers Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Master data QUOTES
+                </a>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="">
+                    PREFABILITY Master Data
+                </a>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="">
+                    Condominium master data
+                </a>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    Customer data
+                </a>
+                <ul class="nav-group-items">
+                    <li class="nav-item"><a class="nav-link" href=""> Add Apartment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Delete Apartment</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="sidebar sidebar-light sidebar-lg sidebar-end sidebar-overlaid hide" id="aside">
+        <div class="sidebar-header bg-transparent p-0">
+            <button class="sidebar-close" type="button" data-coreui-close="sidebar">
+                <svg class="icon">
+                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-x"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light bg-opacity-50 dark:bg-transparent">
+        <header class="header header-sticky mb-4">
+            <div class="container-fluid">
+                <button class="header-toggler px-md-0 me-md-3 d-md-none" type="button"
+                    onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                    <svg class="icon icon-lg">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+                    </svg>
+                </button>
+                <a class="header-brand d-md-none" href="#">
+
+                </a>
+                <form class="d-flex" role="search">
+                    <div class="input-group"><span class="input-group-text bg-light border-0 px-1" id="search-addon">
+                            <svg class="icon icon-lg my-1 mx-2 text-disabled">
+                                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-search"></use>
+                            </svg></span>
+                        <input class="form-control bg-light border-0" type="text" placeholder="Search..."
+                            aria-label="Search" aria-describedby="search-addon">
+                    </div>
+                </form>
+                <ul class="header-nav ms-auto me-3">
+
+                </ul>
+                <ul class="header-nav me-4">
+                    <li class="nav-item dropdown d-flex align-items-center"><a class="nav-link py-0"
+                            data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            <div class="avatar avatar-md">
+                                <img class="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com">
+                                <span class="avatar-status bg-success"></span>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end pt-0">
+                            <div class="dropdown-header bg-light py-2 dark:bg-white dark:bg-opacity-10">
+                                <div class="fw-semibold">Account</div>
+                            </div>
+                            <a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
+                                </svg> Updates<span class="badge badge-sm bg-info-gradient ms-2">42</span>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
+                                </svg> Messages<span class="badge badge-sm badge-sm bg-success ms-2">42</span>
+                            </a>
+
+                            <div class="dropdown-header bg-light py-2 dark:bg-white dark:bg-opacity-10">
+                                <div class="fw-semibold">Settings</div>
+                            </div>
+                            <a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+                                </svg>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+                                </svg>
+                                Settings
+                            </a>
+
+                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                                </svg> Account Info</a><a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+                                </svg> Logout</a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="header-toggler px-md-0 me-md-3" type="button"
+                    onclick="coreui.Sidebar.getInstance(document.querySelector('#aside')).show()">
+                    <svg class="icon icon-lg">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-applications-settings"></use>
+                    </svg>
+                </button>
+            </div>
+        </header>
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item">
+                            <span>Home</span>
+                        </li>
+                        <li class="breadcrumb-item active"><span>Edit Customer</span></li>
+                    </ol>
+                </nav>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mb-4">
+                            <div class="card-body p-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card-title fs-4 fw-semibold">Customer Name</div>
+                                    </div>
+                                    <div class="col-auto ms-auto">
+                                        <button class="btn btn-danger" data-coreui-toggle="modal" data-coreui-target="#deleteModal" data-coreui-whatever="">
+                                            <svg class="icon me-2">
+                                                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user-plus">
+                                                </use>
+                                            </svg>Delete Customer
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="viewModalLabel">User Details</h5>
+                          <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure want to delete user with all details ?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-dark" data-coreui-dismiss="modal">Back</button>
+                          <button type="button" class="btn btn-danger">Delete User</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                <div class="row user-details">
+                    <div class="col-lg-12">
+                         <!-- Tabs with icons on Card -->
+                <div class="card card-nav-tabs">
+                    <div class="card-header card-header-primary">
+                        <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-coreui-target="#building-info" data-coreui-toggle="tab">
+                                            Building Info
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-coreui-target="#master-data" data-coreui-toggle="tab">                                            
+                                            Master Data
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"  data-coreui-target="#prefability-master-data" data-coreui-toggle="tab">
+                                            Prefability Master Data
+                                        </a>    
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-coreui-target="#condominium-master-data" data-coreui-toggle="tab">
+                                            Condominium master data
+                                        </a>    
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-coreui-target="#customer-data" data-coreui-toggle="tab">
+                                            Customer data
+                                        </a>    
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><div class="card-body ">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="building-info">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">Condominium master data</div>                                               
+                                                <div class="card-body">
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        ID-CONDOMINIUM :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="ID-CONDOMINIUM" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        NAME :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="NAME" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        ADDRESS :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <textarea rows="2" class="form-control w-100" id="ADDRESS" placeholder=""></textarea>
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        LOCATION :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="LOCATION" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        ZIP CODE :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="ZIP" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        TAX CODE :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="TAX" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        VAT NUMBER :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="VAT" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        ADMINISTRATOR :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="ADMINISTRATOR" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        LAT :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="LAT" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        LNG :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="LNG" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        BUILDINGS :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="BUILDINGS" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text">
+                                                    <span class="fw-semibold">
+                                                        USERS :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="USERS" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">Apartment Master Data</div>                                               
+                                                <div class="card-body">
+                                                    <p class="card-text mb-1">
+                                                        <span class="fw-semibold">
+                                                            ID :
+                                                        </span>
+                                                        <span class="fw-normal d-inline-flex">
+                                                            <input type="text" class="form-control w-100" id="ID" placeholder="">
+                                                        </span>
+                                                      </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        ID-CONDOMINIUM :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="ID-CONDOMINIUM" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        CODE :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="CODE" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        BUILDING :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="BUILDING" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        STAIRCASE :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="STAIRCASE" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        FLOORPLAN :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input class="form-control" class="form-control w-100" type="file" id="floor-plan">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        AREA :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="AREA" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        FIXTURE :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="FIXTURE" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="master-data">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">MASTER TYPES</div>                                               
+                                                <div class="card-body">
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        TYPE-ID :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="TYPE-ID" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        DESCRIPTION :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="DESCRIPTION" placeholder="">
+                                                    </span>
+                                                  </p>                                                 
+                                                  
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">LEAF MASTER DATA</div>                                               
+                                                <div class="card-body">
+                                                    <p class="card-text mb-1">
+                                                        <span class="fw-semibold">
+                                                            ID :
+                                                        </span>
+                                                        <span class="fw-normal d-inline-flex">
+                                                            <input type="text" class="form-control w-100" id="ID" placeholder="">
+                                                        </span>
+                                                      </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        ID-TIPI:
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="ID-TIPI" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        LARG :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="LARG" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        HEIGHT :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="HEIGHT" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        MATERIAL :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="MATERIAL" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        TRANSMITTANCE :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="TRANSMITTANCE" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">BOILER MASTER DATA</div>                                               
+                                                <div class="card-body">
+                                                    <p class="card-text mb-1">
+                                                        <span class="fw-semibold">
+                                                            ID :
+                                                        </span>
+                                                        <span class="fw-normal d-inline-flex">
+                                                            <input type="text" class="form-control w-100" id="ID" placeholder="">
+                                                        </span>
+                                                      </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        BRAND:
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="BRAND" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        MODEL :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="MODEL" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        POWER :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="POWER" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                                                                    
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">AIR CONDITIONER MASTER DATA</div>                                               
+                                                <div class="card-body">
+                                                    <p class="card-text mb-1">
+                                                        <span class="fw-semibold">
+                                                            ID :
+                                                        </span>
+                                                        <span class="fw-normal d-inline-flex">
+                                                            <input type="text" class="form-control w-100" id="ID" placeholder="">
+                                                        </span>
+                                                      </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        BRAND:
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="BRAND" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        MODEL :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="MODEL" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        POWER :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="POWER" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">WATER HEATER MASTER DATA</div>                                               
+                                                <div class="card-body">
+                                                    <p class="card-text mb-1">
+                                                        <span class="fw-semibold">
+                                                            ID :
+                                                        </span>
+                                                        <span class="fw-normal d-inline-flex">
+                                                            <input type="text" class="form-control w-100" id="ID" placeholder="">
+                                                        </span>
+                                                      </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        BRAND:
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="BRAND" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        MODEL :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="MODEL" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        POWER :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="POWER" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">RADIATOR MASTER DATA</div>                                               
+                                                <div class="card-body">
+                                                    <p class="card-text mb-1">
+                                                        <span class="fw-semibold">
+                                                            ID :
+                                                        </span>
+                                                        <span class="fw-normal d-inline-flex">
+                                                            <input type="text" class="form-control w-100" id="ID" placeholder="">
+                                                        </span>
+                                                      </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        WHEELBASE:
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="WHEELBASE" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        HEIGHT :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="HEIGHT" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        ELEMENTS :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="ELEMENTS" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">CURTAINS MASTER DATA</div>                                               
+                                                <div class="card-body">
+                                                    <p class="card-text mb-1">
+                                                        <span class="fw-semibold">
+                                                            ID :
+                                                        </span>
+                                                        <span class="fw-normal d-inline-flex">
+                                                            <input type="text" class="form-control w-100" id="ID" placeholder="">
+                                                        </span>
+                                                      </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        BRAND:
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="BRAND" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        MODEL :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="MODEL" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        LENGTH :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="LENGTH" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        LARG :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="LARG" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        CANVAS :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="CANVAS" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">SUPPLIERS MASTER DATA</div>                                               
+                                                <div class="card-body">
+                                                    <p class="card-text mb-1">
+                                                        <span class="fw-semibold">
+                                                            ID :
+                                                        </span>
+                                                        <span class="fw-normal d-inline-flex">
+                                                            <input type="text" class="form-control w-100" id="ID" placeholder="">
+                                                        </span>
+                                                      </p>
+                                                                                                  
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">MASTER DATA QUOTES</div>                                               
+                                                <div class="card-body">
+                                                    <p class="card-text mb-1">
+                                                        <span class="fw-semibold">
+                                                            ID :
+                                                        </span>
+                                                        <span class="fw-normal d-inline-flex">
+                                                            <input type="text" class="form-control w-100" id="ID" placeholder="">
+                                                        </span>
+                                                      </p>
+                                                                                                    
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="prefability-master-data">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">PREFABILITY MASTER DATA</div>                                               
+                                                <div class="card-body">
+                                                    <p class="card-text mb-1">
+                                                        <span class="fw-semibold">
+                                                            ID :
+                                                        </span>
+                                                        <span class="fw-normal d-inline-flex">
+                                                            <input type="text" class="form-control w-100" id="ID" placeholder="">
+                                                        </span>
+                                                      </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        ID-CONDOMINIUM :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="ID-CONDOMINIUM" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        ID-CUSTOMER :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="ID-CUSTOMER" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        BOILER :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="BOILER" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        RADIATORS :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="RADIATORS" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        CHRONO :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="CHRONO" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        FIXTURES :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="FIXTURES" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        SHUTTERS :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="SHUTTERS" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        FRONT DOOR :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="FRONTDOOR" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        WALLBOX :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="WALLBOX" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        BLINDS :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="BLINDS" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        AIR CONDITIONERS :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="AIRCONDITIONER" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text">
+                                                    <span class="fw-semibold">
+                                                        OTHER :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="OTHER" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="condominium-master-data">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card text-bg-light card-core-ui"> 
+                                                <div class="card-header fw-bold text-uppercase">CONDOMINIUM MASTER DATA</div>                                               
+                                                <div class="card-body">
+                                                    <p class="card-text mb-1">
+                                                        <span class="fw-semibold">
+                                                            ID-CLIENT :
+                                                        </span>
+                                                        <span class="fw-normal d-inline-flex">
+                                                            <input type="text" class="form-control w-100" id="ID-CLIENT" placeholder="">
+                                                        </span>
+                                                      </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        ID-CONDOMINIUM :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="ID-CONDOMINIUM" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        FIRST NAME :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="FIRSTNAME" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        LAST NAME :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="LASTNAME" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        TAX CODE / VAT NUMBER :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="TAXCODE" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        EMAIL / PEC :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="EMAIL" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        PHONE :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="PHONE" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        SHEET :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="SHEET" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        PARCEL :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="PARCEL" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        SUB DIVISION :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="SUBDIVISION" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        BUILDING :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="BUILDING" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        STAIRCASE :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="STAIRCASE" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        INTERIOR :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="INTERIOR" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text mb-1">
+                                                    <span class="fw-semibold">
+                                                        CADASTRAL CATEGORY :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="CADASTRAL" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <p class="card-text">
+                                                    <span class="fw-semibold">
+                                                        SQ. MTR :
+                                                    </span>
+                                                    <span class="fw-normal d-inline-flex">
+                                                        <input type="text" class="form-control w-100" id="SQMTR" placeholder="">
+                                                    </span>
+                                                  </p>
+                                                  <a href="#" class="btn btn-outline-success w-100 mt-3">SAVE</a>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="customer-data">
+                               
+                            </div>
+                        </div>
+                    </div></div>
+                <!-- End Tabs with icons on Card -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div><a href="#">By Admin </a><a href="">Construction</a> © 2022 </div>
+            <div class="ms-auto">Powered by&nbsp;<a href="">Team</a></div>
+        </footer>
+    </div>
+
+    <script src="vendors/@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
+    <script src="vendors/simplebar/js/simplebar.min.js"></script>
+    <script src="vendors/chart.js/js/chart.min.js"></script>
+    <script src="vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
+    <script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

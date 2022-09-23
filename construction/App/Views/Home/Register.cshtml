@@ -1,0 +1,90 @@
+﻿@model App.Models.registermodel
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <base href="~/proj/./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Constructions App</title>
+
+    <link rel="stylesheet" href="~/proj/vendors/simplebar/css/simplebar.css">
+    <link rel="stylesheet" href="~/proj/css/vendors/simplebar.css">
+    <link href="~/proj/css/style.css" rel="stylesheet">
+    <link href="~/proj/css/examples.css" rel="stylesheet">
+    <link href="~/proj/vendors/@@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-light min-vh-100 d-flex flex-row align-items-center dark:bg-transparent">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card mb-4 mx-4">
+                        <div class="card-body p-4">
+                            <h1>Register</h1>
+                            @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+                            {
+                                <p class="text-medium-emphasis">Create your account</p>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">
+                                        <svg class="icon">
+                                            <use xlink:href="~/proj/vendors/@@coreui/icons/svg/free.svg#cil-user"></use>
+                                        </svg>
+                                    </span>
+                                    @*<input class="form-control" type="text" placeholder="Username">*@
+                                    @Html.TextBoxFor(model => model.username, new { @class = "form-control", type="text", @id = "exampleInputEmail1", placeholder = "Username" })
+                                </div>
+                                @*<div class="input-group mb-3">
+                            <span class="input-group-text">
+                            <svg class="icon">
+                            <use xlink:href="~/proj/vendors/@@coreui/icons/svg/free.svg#cil-envelope-open"></use>
+                            </svg>
+                            </span>
+                            <input class="form-control" type="text" placeholder="Email">
+                            </div>*@
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">
+                                        <svg class="icon">
+                                            <use xlink:href="~/proj/vendors/@@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                                        </svg>
+                                    </span>
+                                    @*<input class="form-control" type="password" placeholder="Password">*@
+                                    @Html.PasswordFor(model => model.pswd, new { @class = "form-control", @id = "exampleInputPassword1", placeholder = "Password" })
+                                </div>
+                                <div class="input-group mb-4">
+                                    <span class="input-group-text">
+                                        <svg class="icon">
+                                            <use xlink:href="~/proj/vendors/@@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                                        </svg>
+                                    </span>
+                                    @*<input class="form-control" type="password" placeholder="Repeat password">*@
+                                    @Html.PasswordFor(model => model.pswd, new { @class = "form-control", @id = "exampleInputPassword1", placeholder = "Repeat password" })
+                                </div>
+                                <button class="btn btn-block btn-success" type="submit">Create Account</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div><a href="~/proj/#">By Admin </a><a href="~/proj/">Construction</a> © 2022 </div>
+            <div class="ms-auto">Powered by&nbsp;<a href="~/proj/">Team</a></div>
+        </footer>
+    </div>
+
+    <script src="~/proj/vendors/@@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
+    <script src="~/proj/vendors/simplebar/js/simplebar.min.js"></script>
+    <script src="~/proj/vendors/chart.js/js/chart.min.js"></script>
+    <script src="~/proj/vendors/@@coreui/chartjs/js/coreui-chartjs.js"></script>
+    <script src="~/proj/vendors/@@coreui/utils/js/coreui-utils.js"></script>
+    <script src="~/proj/js/main.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
