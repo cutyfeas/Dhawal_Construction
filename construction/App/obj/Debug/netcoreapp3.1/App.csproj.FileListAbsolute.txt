@@ -589,3 +589,7 @@ C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\D
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\_adminsidebar.cshtml.g.cs
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\User\Create.cshtml.g.cs
 C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\User\Details.cshtml.g.cs
+C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\User\_pages.cshtml.g.cs
+C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\User\_role.cshtml.g.cs
+C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\User\_rolepage.cshtml.g.cs
+C:\Users\VishalKumar\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\User\_user.cshtml.g.cs

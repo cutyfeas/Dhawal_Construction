@@ -1,108 +1,122 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@model IEnumerable< App.Entity.tbl_user>
+﻿@model App.Models.usermodel
 @{
     Layout = "~/Views/_adminlayout.cshtml";
+    var breadcrumb = Model.tabid == 1 ? "Role" : Model.tabid == 2 ? "Page" : Model.tabid == 3 ? "Rolepage" : "User";
 }
 
 
 <div class="wrapper d-flex flex-column min-vh-100 bg-light bg-opacity-50 dark:bg-transparent">
-    @Html.Partial("/Views/_adminheader.cshtml");
+    <partial name="/Views/_adminheader.cshtml">
 
-    <div class="body flex-grow-1 px-3">
-        <div class="container-lg">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item">
-                        <span>Home</span>
-                    </li>
-                    <li class="breadcrumb-item active"><span>Users</span></li>
-                </ol>
-            </nav>
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item">
+                            <span>Home</span>
+                        </li>
+                        <li class="breadcrumb-item active"><span>@breadcrumb</span></li>
+                    </ol>
+                </nav>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card mb-4">
-                        <div class="card-body p-4">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card-title fs-4 fw-semibold">Customers</div>
-                                    <div class="card-subtitle text-disabled mb-4">@Model.Count() registered users</div>
-                                </div>
-                                <div class="col-auto ms-auto">
-                                    <button class="btn btn-secondary">
-                                        <svg class="icon me-2">
-                                            <use xlink:href="~/proj/vendors/@@coreui/icons/svg/free.svg#cil-user-plus">
-                                            </use>
-                                        </svg>Add new Customer
-                                    </button>
+                <div class="row user-details">
+                    <div class="col-lg-12">
+                        <!-- Tabs with icons on Card -->
+                        <div class="card card-nav-tabs">
+                            <div class="card-header card-header-primary">
+                                <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                                <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper">
+                                        <ul class="nav nav-tabs" data-tabs="tabs">
+                                            <li class="nav-item">
+                                                @*<a class="nav-link active" data-coreui-target="#role"
+                                                data-coreui-toggle="tab">
+                                                Role
+                                                </a>*@
+
+                                                @if (Model.tabid == 1)
+                                                {
+                                                    <a class="nav-link active" data-coreui-target="#role"
+                                                   href="/user/role">
+                                                        Role
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a class="nav-link" data-coreui-target="#role"
+                                                   href="/user/role">
+                                                        Role
+                                                    </a>
+                                                }
+
+
+                                                @*data-coreui-toggle="tab"*@
+
+
+                                            </li>
+                                            <li class="nav-item">
+                                                @if (Model.tabid == 2)
+                                                {
+                                                    <a class="nav-link active" data-coreui-target="#pages"
+                                                   href="/user/viewpage">
+                                                        Pages
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a class="nav-link" data-coreui-target="#pages"
+                                                   href="/user/viewpage">
+                                                        Pages
+                                                    </a>
+                                                }
+                                            </li>
+                                            <li class="nav-item">
+                                                @if (Model.tabid == 3)
+                                                {
+                                                    <a class="nav-link active" data-coreui-target="#rolePages" href="/user/viewrolepage">
+                                                        Role Pages
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a class="nav-link" data-coreui-target="#rolePages" href="/user/viewrolepage">
+                                                        Role Pages
+                                                    </a>
+                                                }
+                                            </li>
+                                            <li class="nav-item">
+                                                @if (Model.tabid == 4)
+                                                {
+                                                    <a class="nav-link active" data-coreui-target="#users" href="/user/viewusers">
+                                                        User
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a class="nav-link" data-coreui-target="#users" href="/user/viewusers">
+                                                        User
+                                                    </a>
+                                                }
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="table-responsive">
-                                <table class="table mb-0">
-                                    <thead class="fw-semibold text-disabled">
-                                        <tr class="align-middle">
-                                            <th class="text-center">
-                                                <svg class="icon">
-                                                    <use xlink:href="~/proj/vendors/@@coreui/icons/svg/free.svg#cil-people">
-                                                    </use>
-                                                </svg>
-                                            </th>
-                                            <th class="text-left">Customer</th>
-                                            <th class="text-center">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var x in Model)
-                                        {
-                                            <tr class="align-middle">
-                                                <td class="text-center">
-                                                    <div class="avatar avatar-md">
-                                                        <img class="avatar-img"
-                                                         src="~/proj/assets/img/avatars/1.jpg" alt="user@email.com"><span class="avatar-status bg-success"></span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div>@x.username</div>
-                                                    <div class="small text-disabled">
-                                                        <span>New</span> | Registered: @x.createddate
-                                                    </div>
-                                                </td>
-                                                <td class="text-end">
-                                                    <a href="/User/Details/@x.id" type="button" class="btn btn-outline-info">View</a>
-                                                    <a href="/User/Edit/@x.id" type="button" class="btn btn-outline-warning">Edit</a>
-                                                    <a href="/User/Delete/@x.id" type="button" class="btn btn-outline-danger" >Delete</a>
-                                                </td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
+                            <div class="card-body ">
+                                <div class="tab-content">
+                                    <partial name="_role" for="@Model">
+                                        <partial name="_pages" for="@Model">
+                                            <partial name="_rolepage" for="@Model">
+                                                <partial name="_user" for="@Model">
+                                </div>
                             </div>
                         </div>
+                        <!-- End Tabs with icons on Card -->
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="viewModalLabel">User Details</h5>
-                    <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure want to delete user with all details ?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" data-coreui-dismiss="modal">Back</button>
-                    <button type="button" class="btn btn-danger">Delete User</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    @Html.Partial("/Views/_adminfooter.cshtml");
+        <partial name="/Views/_adminfooter.cshtml">
+
 </div>

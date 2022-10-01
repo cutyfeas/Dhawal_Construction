@@ -125,3 +125,11 @@
     min-width: 37%;
     display: inline-flex;
 }
+.list-view{
+    overflow: scroll;
+    width: 100%;
+}
+.list-view table thead tr th{
+    font-size: 12px;
+    font-weight: bold;
+}

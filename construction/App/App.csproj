@@ -17,7 +17,6 @@
     <Compile Remove="Service\TblMastertypeSupplierMapService.cs" />
     <Compile Remove="Service\TblPageService.cs" />
     <Compile Remove="Service\TblRolePageService.cs" />
-    <Compile Remove="Service\TblRoleService.cs" />
     <Compile Remove="Service\TblSupplierService.cs" />
   </ItemGroup>
 

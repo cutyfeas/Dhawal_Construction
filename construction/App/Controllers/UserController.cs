@@ -17,19 +17,72 @@ namespace App.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         Itbl_userService tbl_userService;
+        Itbl_roleService tbl_roleService;
 
 
-        public UserController(ILogger<HomeController> logger, Itbl_userService _tbl_userService)
+        public UserController(ILogger<HomeController> logger, Itbl_userService _tbl_userService, Itbl_roleService _tbl_roleService)
         {
             _logger = logger;
             tbl_userService = _tbl_userService;
+            tbl_roleService = _tbl_roleService;
         }
 
-        [Route("user/userlist", Name = "userlist")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int tabid=1)
         {
-            var data = await tbl_userService.GetAll_tbl_user();
-            return View(data);
+            var rolelist = await tbl_roleService.GetAll_TblRole();
+            var model = new usermodel
+            {
+                tabid = tabid,
+                rolelist = rolelist,
+            };
+            return View(model);
+        }
+
+        [Route("user/role", Name = "rolelist")]
+        public async Task<IActionResult> viewrole()
+        {
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> addrole(usermodel m)
+        {
+            if (m.roleid == 0)
+                await tbl_roleService.Add_TblRole(m);
+            else
+                await tbl_roleService.Update_TblRole(m);
+            return RedirectToAction("viewrole");
+        }
+        public async Task<IActionResult> deleterole(int id)
+        {
+            var data = await tbl_roleService.Delete_TblRole(id);
+            return RedirectToAction("viewrole");
+        }
+        public async Task<IActionResult> editrole(int id)
+        {
+            var rolelist = await tbl_roleService.GetAll_TblRole();
+            var role = await tbl_roleService.Get_TblRole(id);
+            var model = new usermodel
+            {
+                tabid = 1,
+                rolelist = rolelist,
+                roleid = role.id,
+                rolename = role.rolename
+            };
+            return View("Index", model);
+        }
+
+        public async Task<IActionResult> viewpage()
+        {
+            
+            return RedirectToAction("Index",new {tabid=2});
+        }
+        public async Task<IActionResult> viewrolepage()
+        {
+            return RedirectToAction("Index", new { tabid = 3 });
+        }
+        public async Task<IActionResult> viewusers()
+        {
+            return RedirectToAction("Index", new { tabid = 4 });
         }
 
 

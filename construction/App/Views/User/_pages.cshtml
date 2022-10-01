@@ -1,0 +1,54 @@
+﻿@model App.Models.usermodel
+
+@{
+    var isactive = Model.tabid == 2 ? "active" : "inactive";
+}
+
+<div class="tab-pane @isactive" id="pages">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="pages_lists" action="" method="" class="form">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="ID" class="form-label fw-semibold">ID:</label>
+                            <input type="text" class="form-control" id="ID">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="pageName" class="form-label fw-semibold">PAGE NAME:</label>
+                            <input type="text" class="form-control" id="pageName">
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">ADD PAGE</button>
+                </form>
+                <div class="list-view">
+                    <table id="page-list" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>PAGE NAME</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>ABOUT PAGE</td>
+                                <td>
+                                    <a class="btn btn-success me-2" href="#">
+                                        <i class="cil-pencil icon icon-sm"></i>
+                                    </a>
+                                    <a class="btn btn-info me-2" href="#deleteModal">
+                                        <i class="cil-trash icon icon-sm"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
