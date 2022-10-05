@@ -19,31 +19,47 @@ namespace App.Controllers
         Itbl_userService tbl_userService;
         Itbl_roleService tbl_roleService;
         Itbl_pageservice tbl_pageservice;
+        Itbl_role_pageService tbl_role_pageservice;
 
 
 
         public UserController(ILogger<HomeController> logger, Itbl_userService _tbl_userService
-            , Itbl_roleService _tbl_roleService, Itbl_pageservice _tbl_pageservice)
+            , Itbl_roleService _tbl_roleService, Itbl_pageservice _tbl_pageservice,
+            Itbl_role_pageService _tbl_role_pageservice)
         {
             _logger = logger;
             tbl_userService = _tbl_userService;
             tbl_roleService = _tbl_roleService;
             this.tbl_pageservice = _tbl_pageservice;
+            this.tbl_role_pageservice = _tbl_role_pageservice;
         }
 
         public async Task<IActionResult> Index(int tabid = 1)
         {
             var rolelist = new List<tbl_role>();
             var pagelist = new List<tbl_pages>();
+            var rolepagelist = new List<tbl_role_page>();
             if (tabid == 1)
                 rolelist = await tbl_roleService.GetAll_TblRole();
             else if (tabid == 2)
                 pagelist = await tbl_pageservice.GetAll_tbl_pages();
+            else if (tabid == 3)
+            {
+                rolepagelist = await tbl_role_pageservice.GetAll_tbl_role_page();
+                rolelist = await tbl_roleService.GetAll_TblRole();
+                pagelist = await tbl_pageservice.GetAll_tbl_pages();
+
+                rolelist.Insert(0, new tbl_role { id = 0, rolename = "--Select Role Name--" });
+                pagelist.Insert(0, new tbl_pages { id = 0, pagename = "--Select Page Name--" });
+            }
+
+
             var model = new usermodel
             {
                 tabid = tabid,
                 rolelist = rolelist,
-                pagelist = pagelist
+                pagelist = pagelist,
+                rolepagelist = rolepagelist
             };
             return View(model);
         }
@@ -121,14 +137,46 @@ namespace App.Controllers
         }
         #endregion
 
-
-
-
+        #region role page
 
         public async Task<IActionResult> viewrolepage()
         {
             return RedirectToAction("Index", new { tabid = 3 });
         }
+
+        [HttpPost]
+        public async Task<IActionResult> addrolepage(usermodel m)
+        {
+            if (m.rolepageid == 0)
+                await tbl_role_pageservice.Add_tbl_role_page(m);
+            else
+                await tbl_role_pageservice.Update_tbl_role_page(m);
+            return RedirectToAction("viewrolepage");
+        }
+        public async Task<IActionResult> deleterolepage(int id)
+        {
+            var data = await tbl_role_pageservice.Delete_tbl_role_page(id);
+            return RedirectToAction("viewrolepage");
+        }
+        public async Task<IActionResult> editrolepage(int id)
+        {
+            var data = await tbl_role_pageservice.Get_tbl_role_page(id);
+            var model = new usermodel
+            {
+                tabid = 3,
+                rolelist = await tbl_roleService.GetAll_TblRole(),
+                pagelist = await tbl_pageservice.GetAll_tbl_pages(),
+                rolepagelist = await tbl_role_pageservice.GetAll_tbl_role_page(),
+                roleid = Convert.ToInt32(data.roleid),
+                pageid = Convert.ToInt32(data.pageid),
+                rolepageid=id
+            };
+            return View("Index", model);
+        }
+        #endregion
+
+
+
         public async Task<IActionResult> viewusers()
         {
             return RedirectToAction("Index", new { tabid = 4 });

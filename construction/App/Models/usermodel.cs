@@ -15,5 +15,8 @@ namespace App.Models
         public string pagename { get; set; }
         public List<tbl_pages> pagelist { get; set; }
 
+        public int rolepageid { get; set; }
+        public List<tbl_role_page> rolepagelist { get; set; }
+
     }
 }

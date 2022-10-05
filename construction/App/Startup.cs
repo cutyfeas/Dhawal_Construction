@@ -40,8 +40,9 @@ namespace App
             services.AddScoped<Itbl_userService, tbl_userService>();
             services.AddScoped<Itbl_roleService, tbl_roleService>();
             services.AddScoped<Itbl_pageservice, tbl_pageservice>();
+            services.AddScoped<Itbl_role_pageService, tbl_role_pageService>();
 
-            //services.AddScoped<Itbl_condominiumService, tbl_condominiumService>();
+
             //services.AddScoped<ITblMasterfieldService, TblMasterfieldService>();
             //services.AddScoped<ITblMastertypefieldService, TblMastertypefieldService>();
 
