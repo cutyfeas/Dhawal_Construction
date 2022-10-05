@@ -39,6 +39,7 @@ namespace App.Controllers
             var rolelist = new List<tbl_role>();
             var pagelist = new List<tbl_pages>();
             var rolepagelist = new List<tbl_role_page>();
+            var userlist = new List<tbl_user>();
             if (tabid == 1)
                 rolelist = await tbl_roleService.GetAll_TblRole();
             else if (tabid == 2)
@@ -52,6 +53,12 @@ namespace App.Controllers
                 rolelist.Insert(0, new tbl_role { id = 0, rolename = "--Select Role Name--" });
                 pagelist.Insert(0, new tbl_pages { id = 0, pagename = "--Select Page Name--" });
             }
+            else if (tabid == 4)
+            {
+                userlist = await tbl_userService.GetAll_tbl_user();
+                rolelist = await tbl_roleService.GetAll_TblRole();
+                rolelist.Insert(0, new tbl_role { id = 0, rolename = "--Select Role Name--" });
+            }
 
 
             var model = new usermodel
@@ -59,7 +66,8 @@ namespace App.Controllers
                 tabid = tabid,
                 rolelist = rolelist,
                 pagelist = pagelist,
-                rolepagelist = rolepagelist
+                rolepagelist = rolepagelist,
+                userlist = userlist
             };
             return View(model);
         }
@@ -169,80 +177,56 @@ namespace App.Controllers
                 rolepagelist = await tbl_role_pageservice.GetAll_tbl_role_page(),
                 roleid = Convert.ToInt32(data.roleid),
                 pageid = Convert.ToInt32(data.pageid),
-                rolepageid=id
+                rolepageid = id
             };
             return View("Index", model);
         }
         #endregion
 
 
-
+        #region User
         public async Task<IActionResult> viewusers()
         {
             return RedirectToAction("Index", new { tabid = 4 });
         }
-
-
-
-        public async Task<IActionResult> Create()
-        {
-            var data = await tbl_userService.Add_tbl_user(null);
-            return View(data);
-        }
         [HttpPost]
-        public async Task<IActionResult> Create(tbl_user TblUser)
+        public async Task<IActionResult> adduser(usermodel m)
         {
-            var data = await tbl_userService.Add_tbl_user(TblUser);
-            return RedirectToAction("Index");
+            if (m.userid == 0)
+                await tbl_userService.Add_tbl_user(m);
+            else
+                await tbl_userService.Update_tbl_user(m);
+            return RedirectToAction("viewusers");
         }
-
-        public async Task<IActionResult> Edit(int id)
-        {
-            var data = await tbl_userService.Get_tbl_user(id);
-            return View("Create", data);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Edit(tbl_user TblUser)
-        {
-            await tbl_userService.Update_tbl_user(TblUser);
-            return RedirectToAction("Index");
-        }
-
-        public async Task<IActionResult> Details(int id)
-        {
-            var data = await tbl_userService.Get_tbl_user(id);
-            return View(data);
-        }
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> deleteuser(int id)
         {
             var data = await tbl_userService.Delete_tbl_user(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("viewusers");
         }
-
-
-
-
-
-        [HttpGet]
-        public async Task<IActionResult> GetAll_TblUser()
+        public async Task<IActionResult> edituser(int id)
         {
-            try
+            var data = await tbl_userService.Get_tbl_user(id);
+            var model = new usermodel
             {
-                var data = await tbl_userService.GetAll_tbl_user();
-                if (data == null)
-                {
-                    return NotFound();
-                }
-
-                return Ok(data);
-            }
-            catch (Exception)
-            {
-                return BadRequest();
-            }
-
+                tabid = 4,
+                userlist = await tbl_userService.GetAll_tbl_user(),
+                rolelist = await tbl_roleService.GetAll_TblRole(),
+                roleid = Convert.ToInt32(data.roleid),
+                userid = id,
+                username = data.username,
+                pswd = data.pswd,
+            };
+            return View("Index", model);
         }
+
+
+        #endregion
+
+
+
+
+
+
 
         public IActionResult Privacy()
         {

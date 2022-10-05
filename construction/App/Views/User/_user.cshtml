@@ -8,37 +8,48 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form id="usersForm" action="" method="" class="form">
+                @using (Html.BeginForm("adduser", "User", FormMethod.Post))
+                {
+                    <input type="hidden" asp-for="tabid">
+                    <input type="hidden" asp-for="userid">
+
                     <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="ID" class="form-label fw-semibold">ID:</label>
-                            <input type="text" class="form-control" id="ID">
-                        </div>
+                        @*<div class="col-md-6 mb-3">
+                    <label for="ID" class="form-label fw-semibold">ID:</label>
+                    <input type="text" class="form-control" id="ID">
+                    </div>*@
+
                         <div class="col-md-6 mb-3">
                             <label for="username" class="form-label fw-semibold">USER NAME:</label>
-                            <input type="text" class="form-control" id="username">
+                            <input type="text" asp-for="username" class="form-control" id="username">
                         </div>
-                    </div>
-                    <div class="row">
+
                         <div class="col-md-6 mb-3">
                             <label for="password" class="form-label fw-semibold">PASSWORD:</label>
-                            <input type="password" class="form-control" id="password">
+                            <input type="text" asp-for="pswd" class="form-control" id="password">
                         </div>
+
+
+                    </div>
+                    <div class="row">
+
                         <div class="col-md-6 mb-3">
                             <label for="roleId" class="form-label fw-semibold">ROLE ID:</label>
-                            <select class="form-multi-select" id="roleId"
-                                    multiple data-coreui-search="true">
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
+
+                            <select class="form-control" id="roleId" asp-for="roleid" asp-items="@(new SelectList(Model.rolelist,"id","rolename"))"></select>
+                            @*<select class="form-multi-select" id="roleId"
+                        multiple data-coreui-search="true">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        </select>*@
                         </div>
                     </div>
 
 
-                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">ADD USER</button>
-                </form>
+                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">Submit</button>
+                }
                 <div class="list-view">
                     <table id="user-lists" class="display" style="width:100%">
                         <thead>
@@ -51,25 +62,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    ADMIN
-                                </td>
-                                <td>**********</td>
-                                <td>
-                                    <span class="badge bg-success-gradient">10</span>
-                                    <span class="badge bg-success-gradient">12</span>
-                                </td>
-                                <td>
-                                    <a class="btn btn-success me-2" href="#">
-                                        <i class="cil-pencil icon icon-sm"></i>
-                                    </a>
-                                    <a class="btn btn-info me-2" href="#deleteModal">
-                                        <i class="cil-trash icon icon-sm"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                            @foreach (var x in Model.userlist)
+                            {
+                                <tr>
+                                    <td>@x.id</td>
+                                    <td>
+                                        @x.username
+                                    </td>
+                                    <td>@x.pswd</td>
+                                    <td>
+                                        <span class="badge bg-success-gradient">@x.role.rolename</span>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success me-2" href="/user/edituser/@x.id">
+                                            <i class="cil-pencil icon icon-sm"></i>
+                                        </a>
+                                        <a class="btn btn-info me-2" href="/user/deleteuser/@x.id">
+                                            <i class="cil-trash icon icon-sm"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using App.Entity;
+using App.Models;
 
 namespace App.Service
 {
@@ -15,7 +16,8 @@ namespace App.Service
         Task<int> Add_tbl_user(tbl_user data);
         Task Update_tbl_user(tbl_user data);
         Task<int> Delete_tbl_user(int? id);
-
+        Task Add_tbl_user(usermodel m);
+        Task Update_tbl_user(usermodel m);
     }
     public class tbl_userService : Itbl_userService
     {
@@ -99,6 +101,28 @@ namespace App.Service
             }
 
             return result;
+        }
+
+        public Task Add_tbl_user(usermodel m)
+        {
+            var e = new tbl_user
+            {
+                username = m.username,
+                pswd = m.pswd,
+                roleid = m.roleid,
+                createddate = System.DateTime.Now,
+            };
+            return this.Add_tbl_user(e);
+        }
+
+        public async Task Update_tbl_user(usermodel m)
+        {
+            var e = await this.Get_tbl_user(m.userid);
+            e.username = m.username;
+            e.pswd = m.pswd;
+            e.roleid = m.roleid;
+            e.updateddate = System.DateTime.Now;
+            await this.Update_tbl_user(e);
         }
 
 
