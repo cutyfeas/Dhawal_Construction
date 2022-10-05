@@ -245,8 +245,6 @@ namespace App.Entity
 
             modelBuilder.Entity<tbl_pages>(entity =>
             {
-                entity.Property(e => e.id).ValueGeneratedNever();
-
                 entity.Property(e => e.createddate).HasColumnType("datetime");
 
                 entity.Property(e => e.pagename).HasMaxLength(50);

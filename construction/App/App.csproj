@@ -15,7 +15,6 @@
     <Compile Remove="Service\TblMastertypefieldService.cs" />
     <Compile Remove="Service\TblMastertypeService.cs" />
     <Compile Remove="Service\TblMastertypeSupplierMapService.cs" />
-    <Compile Remove="Service\TblPageService.cs" />
     <Compile Remove="Service\TblRolePageService.cs" />
     <Compile Remove="Service\TblSupplierService.cs" />
   </ItemGroup>
@@ -35,6 +34,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="GenerateEntity\" />
   </ItemGroup>
 
 </Project>

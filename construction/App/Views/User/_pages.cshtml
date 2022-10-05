@@ -8,21 +8,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form id="pages_lists" action="" method="" class="form">
+                @using (Html.BeginForm("addpage", "User", FormMethod.Post))
+                {
+                    <input type="hidden" asp-for="tabid">
+                    <input type="hidden" asp-for="pageid">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="ID" class="form-label fw-semibold">ID:</label>
-                            <input type="text" class="form-control" id="ID">
-                        </div>
-                        <div class="col-md-6 mb-3">
                             <label for="pageName" class="form-label fw-semibold">PAGE NAME:</label>
-                            <input type="text" class="form-control" id="pageName">
+                            <input type="text" asp-for="pagename" class="form-control" id="pageName">
                         </div>
                     </div>
+                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">submit</button>
+                }
 
 
-                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">ADD PAGE</button>
-                </form>
+
+
                 <div class="list-view">
                     <table id="page-list" class="display" style="width:100%">
                         <thead>
@@ -33,18 +34,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>ABOUT PAGE</td>
-                                <td>
-                                    <a class="btn btn-success me-2" href="#">
-                                        <i class="cil-pencil icon icon-sm"></i>
-                                    </a>
-                                    <a class="btn btn-info me-2" href="#deleteModal">
-                                        <i class="cil-trash icon icon-sm"></i>
-                                    </a>
-                                </td>
-                            </tr>
+
+                            @if (Model.pagelist != null)
+                            {
+                                @foreach (var x in Model.pagelist)
+                                {
+                                    <tr>
+                                        <td>@x.id</td>
+                                        <td>@x.pagename</td>
+                                        <td>
+                                            <a class="btn btn-success me-2" href="/user/editpage/@x.id">
+                                                <i class="cil-pencil icon icon-sm"></i>
+                                            </a>
+                                            <a class="btn btn-info me-2" href="/user/deletepage/@x.id">
+                                                <i class="cil-trash icon icon-sm"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
                         </tbody>
                     </table>
                 </div>

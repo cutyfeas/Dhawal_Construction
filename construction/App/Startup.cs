@@ -39,7 +39,7 @@ namespace App
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<Itbl_userService, tbl_userService>();
             services.AddScoped<Itbl_roleService, tbl_roleService>();
-            //services.AddScoped<ITblBeneficiarieservice, TblBeneficiarieservice>();
+            services.AddScoped<Itbl_pageservice, tbl_pageservice>();
 
             //services.AddScoped<Itbl_condominiumService, tbl_condominiumService>();
             //services.AddScoped<ITblMasterfieldService, TblMasterfieldService>();

@@ -18,25 +18,37 @@ namespace App.Controllers
         private readonly ILogger<HomeController> _logger;
         Itbl_userService tbl_userService;
         Itbl_roleService tbl_roleService;
+        Itbl_pageservice tbl_pageservice;
 
 
-        public UserController(ILogger<HomeController> logger, Itbl_userService _tbl_userService, Itbl_roleService _tbl_roleService)
+
+        public UserController(ILogger<HomeController> logger, Itbl_userService _tbl_userService
+            , Itbl_roleService _tbl_roleService, Itbl_pageservice _tbl_pageservice)
         {
             _logger = logger;
             tbl_userService = _tbl_userService;
             tbl_roleService = _tbl_roleService;
+            this.tbl_pageservice = _tbl_pageservice;
         }
 
-        public async Task<IActionResult> Index(int tabid=1)
+        public async Task<IActionResult> Index(int tabid = 1)
         {
-            var rolelist = await tbl_roleService.GetAll_TblRole();
+            var rolelist = new List<tbl_role>();
+            var pagelist = new List<tbl_pages>();
+            if (tabid == 1)
+                rolelist = await tbl_roleService.GetAll_TblRole();
+            else if (tabid == 2)
+                pagelist = await tbl_pageservice.GetAll_tbl_pages();
             var model = new usermodel
             {
                 tabid = tabid,
                 rolelist = rolelist,
+                pagelist = pagelist
             };
             return View(model);
         }
+
+        #region role
 
         [Route("user/role", Name = "rolelist")]
         public async Task<IActionResult> viewrole()
@@ -71,11 +83,48 @@ namespace App.Controllers
             return View("Index", model);
         }
 
+        #endregion
+
+        #region page
+
         public async Task<IActionResult> viewpage()
         {
-            
-            return RedirectToAction("Index",new {tabid=2});
+
+            return RedirectToAction("Index", new { tabid = 2 });
         }
+        [HttpPost]
+        public async Task<IActionResult> addpage(usermodel m)
+        {
+            if (m.pageid == 0)
+                await tbl_pageservice.Add_tbl_pages(m);
+            else
+                await tbl_pageservice.Update_tbl_pages(m);
+            return RedirectToAction("viewpage");
+        }
+        public async Task<IActionResult> deletepage(int id)
+        {
+            var data = await tbl_pageservice.Delete_tbl_pages(id);
+            return RedirectToAction("viewpage");
+        }
+        public async Task<IActionResult> editpage(int id)
+        {
+            var datalist = await tbl_pageservice.GetAll_tbl_pages();
+            var data = await tbl_pageservice.Get_tbl_pages(id);
+            var model = new usermodel
+            {
+                tabid = 2,
+                pagelist = datalist,
+                pageid = data.id,
+                pagename = data.pagename
+            };
+            return View("Index", model);
+        }
+        #endregion
+
+
+
+
+
         public async Task<IActionResult> viewrolepage()
         {
             return RedirectToAction("Index", new { tabid = 3 });

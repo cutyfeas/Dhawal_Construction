@@ -10,5 +10,10 @@ namespace App.Models
         public int roleid { get; set; }
         public string rolename { get; set; }
         public List<tbl_role> rolelist { get; set; }
+
+        public int pageid { get; set; }
+        public string pagename { get; set; }
+        public List<tbl_pages> pagelist { get; set; }
+
     }
 }
