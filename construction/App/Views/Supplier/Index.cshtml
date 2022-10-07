@@ -1,0 +1,143 @@
+﻿@model App.Models.suppliermodel
+@{
+    Layout = "~/Views/_adminlayout.cshtml";
+    var breadcrumb = Model.tabid == 1 ? "Master Type" : Model.tabid == 2 ? "Master Field" : Model.tabid == 3 ? "Master Type Field" : Model.tabid == 4 ? "Supplier" : "Master Type Supplier";
+}
+
+<div class="wrapper d-flex flex-column min-vh-100 bg-light bg-opacity-50 dark:bg-transparent">
+    <partial name="/Views/_adminheader.cshtml">
+
+
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item">
+                            <span>Home</span>
+                        </li>
+                        <li class="breadcrumb-item active"><span>Suppliers</span></li>
+                    </ol>
+                </nav>
+
+                <div class="row user-details">
+                    <div class="col-lg-12">
+                        <!-- Tabs with icons on Card -->
+                        <div class="card card-nav-tabs">
+                            <div class="card-header card-header-primary">
+                                <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                                <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper">
+                                        <ul class="nav nav-tabs" data-tabs="tabs">
+                                            <li class="nav-item">
+
+                                                @if (Model.tabid == 1)
+                                                {
+                                                    <a class="nav-link active" data-coreui-target="#mastertypes"
+                                                   href="/supplier/viewmastertype">
+                                                        Master Types
+                                                    </a>
+                                                    @*data - coreui - toggle = "tab"*@
+                                                }
+                                                else
+                                                {
+                                                    <a class="nav-link" data-coreui-target="#mastertypes"
+                                                   href="/supplier/viewmastertype">
+                                                        Master Types
+                                                    </a>
+                                                }
+
+                                            </li>
+                                            <li class="nav-item">
+                                                @if (Model.tabid == 2)
+                                                {
+                                                    <a class="nav-link active" data-coreui-target="#masterfields"
+                                                   href="/supplier/viewmasterfield">
+                                                        Master Fields
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a class="nav-link" data-coreui-target="#masterfields"
+                                                   href="/supplier/viewmasterfield">
+                                                        Master Fields
+                                                    </a>
+                                                }
+
+                                            </li>
+                                            <li class="nav-item">
+                                                @if (Model.tabid == 3)
+                                                {
+                                                    <a class="nav-link active" data-coreui-target="#mastertypefields"
+                                                   href="/supplier/viewmastertypefield">
+                                                        Master Type Fields
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a class="nav-link" data-coreui-target="#mastertypefields"
+                                                   href="/supplier/viewmastertypefield">
+                                                        Master Type Fields
+                                                    </a>
+                                                }
+
+                                            </li>
+
+                                            <li class="nav-item">
+                                                @if (Model.tabid == 4)
+                                                {
+                                                    <a class="nav-link active" data-coreui-target="#suppliers"
+                                                   href="/supplier/viewsupplier">
+                                                        Suppliers
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a class="nav-link" data-coreui-target="#suppliers"
+                                                   href="/supplier/viewsupplier">
+                                                        Suppliers
+                                                    </a>
+                                                }
+
+                                            </li>
+
+                                            <li class="nav-item">
+                                                @if (Model.tabid == 5)
+                                                {
+                                                    <a class="nav-link active" data-coreui-target="#mastertypeSuppliers"
+                                                   href="/supplier/viewmastertypesupplier">
+                                                        Master Type Suppliers
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a class="nav-link" data-coreui-target="#mastertypeSuppliers"
+                                                   href="/supplier/viewmastertypesupplier">
+                                                        Master Type Suppliers
+                                                    </a>
+                                                }
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <div class="tab-content">
+                                    <partial name="_mastertype" for="@Model">
+                                        <partial name="_masterfield" for="@Model">
+                                            <partial name="_mastertypefield" for="@Model">
+                                                <partial name="_supplier" for="@Model">
+                                                    <partial name="_mastertypesupplier" for="@Model">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Tabs with icons on Card -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <partial name="/Views/_adminfooter.cshtml">
+
+</div>
+

@@ -87,8 +87,6 @@ namespace App.Entity
 
             modelBuilder.Entity<tbl_beneficiary>(entity =>
             {
-                entity.Property(e => e.id).ValueGeneratedNever();
-
                 entity.Property(e => e.Parcel).HasMaxLength(50);
 
                 entity.Property(e => e.Sheet).HasMaxLength(50);
@@ -129,8 +127,6 @@ namespace App.Entity
 
             modelBuilder.Entity<tbl_beneficiary_choice_map>(entity =>
             {
-                entity.Property(e => e.id).ValueGeneratedNever();
-
                 entity.Property(e => e.createddate).HasColumnType("datetime");
 
                 entity.Property(e => e.updateddate).HasColumnType("datetime");
@@ -179,8 +175,6 @@ namespace App.Entity
 
             modelBuilder.Entity<tbl_masterfields>(entity =>
             {
-                entity.Property(e => e.id).ValueGeneratedNever();
-
                 entity.Property(e => e.createddate).HasColumnType("datetime");
 
                 entity.Property(e => e.createddate1).HasColumnType("datetime");
@@ -196,8 +190,6 @@ namespace App.Entity
 
             modelBuilder.Entity<tbl_mastertype>(entity =>
             {
-                entity.Property(e => e.id).ValueGeneratedNever();
-
                 entity.Property(e => e.createddate).HasColumnType("datetime");
 
                 entity.Property(e => e.description).HasMaxLength(50);
@@ -207,8 +199,6 @@ namespace App.Entity
 
             modelBuilder.Entity<tbl_mastertype_supplier_map>(entity =>
             {
-                entity.Property(e => e.id).ValueGeneratedNever();
-
                 entity.Property(e => e.createddate).HasColumnType("datetime");
 
                 entity.Property(e => e.updateddate).HasColumnType("datetime");
@@ -226,8 +216,6 @@ namespace App.Entity
 
             modelBuilder.Entity<tbl_mastertypefields>(entity =>
             {
-                entity.Property(e => e.id).ValueGeneratedNever();
-
                 entity.Property(e => e.createddate).HasColumnType("datetime");
 
                 entity.Property(e => e.updateddate).HasColumnType("datetime");
@@ -280,8 +268,6 @@ namespace App.Entity
 
             modelBuilder.Entity<tbl_suppliers>(entity =>
             {
-                entity.Property(e => e.id).ValueGeneratedNever();
-
                 entity.Property(e => e.createddate).HasColumnType("datetime");
 
                 entity.Property(e => e.updateddate).HasColumnType("datetime");

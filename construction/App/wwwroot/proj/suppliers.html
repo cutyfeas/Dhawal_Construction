@@ -3,30 +3,30 @@
 
 <html lang="en">
 
-    <head>
-        <base href="./">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Constructions App</title>
-    
-        <link rel="stylesheet" href="vendors/simplebar/css/simplebar.css">
-        <link rel="stylesheet" href="css/vendors/simplebar.css">
-        <link rel="stylesheet" href="vendors/@coreui/icons/css/brand.css">    
-        <link rel="stylesheet" href="vendors/@coreui/icons/css/flag.css">    
-        <link rel="stylesheet" href="vendors/@coreui/icons/css/free.css">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Constructions App</title>
+
+    <link rel="stylesheet" href="vendors/simplebar/css/simplebar.css">
+    <link rel="stylesheet" href="css/vendors/simplebar.css">
+    <link rel="stylesheet" href="vendors/@coreui/icons/css/brand.css">
+    <link rel="stylesheet" href="vendors/@coreui/icons/css/flag.css">
+    <link rel="stylesheet" href="vendors/@coreui/icons/css/free.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/brand.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/flag.min.css">
-    
-        <link href="css/style.css" rel="stylesheet">
-    
-        <link href="css/examples.css" rel="stylesheet">
-        <link href="vendors/@coreui/icons/css/all.min.css">
-        <link rel="stylesheet" href="css/dataTables.jqueryui.min.css">
-        <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
-        <link rel="stylesheet" href="vendors/DataTables/datatables.min.css">
-        <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
-    </head>
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/examples.css" rel="stylesheet">
+    <link href="vendors/@coreui/icons/css/all.min.css">
+    <link rel="stylesheet" href="css/dataTables.jqueryui.min.css">
+    <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/DataTables/datatables.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+</head>
 
 <body>
     <div class="sidebar sidebar-dark sidebar-fixed bg-dark-gradient" id="sidebar">
@@ -141,7 +141,7 @@
         <header class="header header-sticky mb-4">
             <div class="container-fluid">
                 <button class="header-toggler px-md-0 me-md-3 d-md-none" type="button"
-                    onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                        onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
                     <svg class="icon icon-lg">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
                     </svg>
@@ -150,21 +150,23 @@
 
                 </a>
                 <form class="d-flex" role="search">
-                    <div class="input-group"><span class="input-group-text bg-light border-0 px-1" id="search-addon">
+                    <div class="input-group">
+                        <span class="input-group-text bg-light border-0 px-1" id="search-addon">
                             <svg class="icon icon-lg my-1 mx-2 text-disabled">
                                 <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-search"></use>
-                            </svg></span>
+                            </svg>
+                        </span>
                         <input class="form-control bg-light border-0" type="text" placeholder="Search..."
-                            aria-label="Search" aria-describedby="search-addon">
+                               aria-label="Search" aria-describedby="search-addon">
                     </div>
                 </form>
                 <ul class="header-nav ms-auto me-3">
-
                 </ul>
                 <ul class="header-nav me-4">
-                    <li class="nav-item dropdown d-flex align-items-center"><a class="nav-link py-0"
-                            data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false">
+                    <li class="nav-item dropdown d-flex align-items-center">
+                        <a class="nav-link py-0"
+                           data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                           aria-expanded="false">
                             <div class="avatar avatar-md">
                                 <img class="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com">
                                 <span class="avatar-status bg-success"></span>
@@ -204,21 +206,34 @@
                             <div class="dropdown-divider"></div><a class="dropdown-item" href="#">
                                 <svg class="icon me-2">
                                     <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
-                                </svg> Account Info</a><a class="dropdown-item" href="#">
+                                </svg> Account Info
+                            </a><a class="dropdown-item" href="#">
                                 <svg class="icon me-2">
                                     <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-                                </svg> Logout</a>
+                                </svg> Logout
+                            </a>
                         </div>
                     </li>
                 </ul>
                 <button class="header-toggler px-md-0 me-md-3" type="button"
-                    onclick="coreui.Sidebar.getInstance(document.querySelector('#aside')).show()">
+                        onclick="coreui.Sidebar.getInstance(document.querySelector('#aside')).show()">
                     <svg class="icon icon-lg">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-applications-settings"></use>
                     </svg>
                 </button>
             </div>
         </header>
+
+
+
+
+
+
+
+
+
+
+
         <div class="body flex-grow-1 px-3">
             <div class="container-lg">
                 <nav aria-label="breadcrumb">
@@ -228,7 +243,10 @@
                         </li>
                         <li class="breadcrumb-item active"><span>Suppliers</span></li>
                     </ol>
-                </nav>                                
+                </nav>
+
+
+
 
                 <div class="row user-details">
                     <div class="col-lg-12">
@@ -240,32 +258,36 @@
                                     <div class="nav-tabs-wrapper">
                                         <ul class="nav nav-tabs" data-tabs="tabs">
                                             <li class="nav-item">
-                                                <a class="nav-link active" data-coreui-target="#suppliers"
-                                                    data-coreui-toggle="tab">
-                                                    Suppliers
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-coreui-target="#masterfields"
-                                                    data-coreui-toggle="tab">
-                                                    Master Fields
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
                                                 <a class="nav-link" data-coreui-target="#mastertypes"
-                                                    data-coreui-toggle="tab">
+                                                   data-coreui-toggle="tab">
                                                     Master Types
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" data-coreui-target="#mastertypefields"
-                                                    data-coreui-toggle="tab">
-                                                    Master Type Fields
+                                                <a class="nav-link" data-coreui-target="#masterfields"
+                                                   data-coreui-toggle="tab">
+                                                    Master Fields
                                                 </a>
                                             </li>
                                             <li class="nav-item">
+                                                <a class="nav-link" data-coreui-target="#mastertypefields"
+                                                   data-coreui-toggle="tab">
+                                                    Master Type Fields
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-coreui-target="#suppliers"
+                                                   data-coreui-toggle="tab">
+                                                    Suppliers
+                                                </a>
+                                            </li>
+
+
+
+                                            <li class="nav-item">
                                                 <a class="nav-link" data-coreui-target="#mastertypeSuppliers"
-                                                    data-coreui-toggle="tab">
+                                                   data-coreui-toggle="tab">
                                                     Master Type Suppliers
                                                 </a>
                                             </li>
@@ -283,34 +305,38 @@
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="ID"
-                                                                    class="form-label fw-semibold">ID:</label>
+                                                                       class="form-label fw-semibold">ID:</label>
                                                                 <input type="text" class="form-control" id="ID">
                                                             </div>
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="name"
-                                                                    class="form-label fw-semibold">NAME
-                                                                    :</label>
+                                                                       class="form-label fw-semibold">
+                                                                    NAME
+                                                                    :
+                                                                </label>
                                                                 <input type="text" class="form-control"
-                                                                    id="name">
+                                                                       id="name">
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="client-id"
-                                                                    class="form-label fw-semibold">CLIENT ID :</label>
-                                                                    <input type="text" class="form-control"
-                                                                    id="client-id">
+                                                                       class="form-label fw-semibold">CLIENT ID :</label>
+                                                                <input type="text" class="form-control"
+                                                                       id="client-id">
                                                             </div>
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="condominium-id"
-                                                                    class="form-label fw-semibold">CONDOMINIUM ID :</label>
+                                                                       class="form-label fw-semibold">CONDOMINIUM ID :</label>
                                                                 <input type="text" class="form-control" id="condominium-id">
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
-                                                                <label for="first-name" class="form-label fw-semibold">FIRST NAME
-                                                                    :</label>
+                                                                <label for="first-name" class="form-label fw-semibold">
+                                                                    FIRST NAME
+                                                                    :
+                                                                </label>
                                                                 <input type="text" class="form-control" id="first-name">
                                                             </div>
                                                             <div class="col-md-6 mb-3">
@@ -326,34 +352,40 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
-                                                                <label for="email" class="form-label fw-semibold">EMAIL
-                                                                    :</label>
+                                                                <label for="email" class="form-label fw-semibold">
+                                                                    EMAIL
+                                                                    :
+                                                                </label>
                                                                 <input type="email" class="form-control" id="email">
                                                             </div>
                                                             <div class="col-md-6 mb-3">
-                                                                <label for="phone" class="form-label fw-semibold">PHONE NUMBER
-                                                                    :</label>
+                                                                <label for="phone" class="form-label fw-semibold">
+                                                                    PHONE NUMBER
+                                                                    :
+                                                                </label>
                                                                 <input type="tel" class="form-control" id="phone">
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="sheet"
-                                                                    class="form-label fw-semibold">SHEET :</label>
-                                                                    <input type="tel" class="form-control" id="sheet">
+                                                                       class="form-label fw-semibold">SHEET :</label>
+                                                                <input type="tel" class="form-control" id="sheet">
                                                             </div>
                                                             <div class="col-md-6 mb-3">
-                                                                <label for="users" class="form-label fw-semibold">PARCEL
-                                                                    :</label>
-                                                                    <input type="tel" class="form-control" id="parcel">
+                                                                <label for="users" class="form-label fw-semibold">
+                                                                    PARCEL
+                                                                    :
+                                                                </label>
+                                                                <input type="tel" class="form-control" id="parcel">
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="subdivision"
-                                                                    class="form-label fw-semibold">SUBDIVISION :</label>
-                                                                    <select class="form-multi-select" id="subdivision"
-                                                                    multiple data-coreui-search="true">
+                                                                       class="form-label fw-semibold">SUBDIVISION :</label>
+                                                                <select class="form-multi-select" id="subdivision"
+                                                                        multiple data-coreui-search="true">
                                                                     <option value="0">Bangalore</option>
                                                                     <option value="1">Bangalore</option>
                                                                     <option value="2">Bangalore</option>
@@ -361,10 +393,12 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-6 mb-3">
-                                                                <label for="buildings" class="form-label fw-semibold">BUILDINGS
-                                                                    :</label>
-                                                                    <select class="form-multi-select" id="buildings"
-                                                                    multiple data-coreui-search="true">
+                                                                <label for="buildings" class="form-label fw-semibold">
+                                                                    BUILDINGS
+                                                                    :
+                                                                </label>
+                                                                <select class="form-multi-select" id="buildings"
+                                                                        multiple data-coreui-search="true">
                                                                     <option value="0">Bangalore</option>
                                                                     <option value="1">Bangalore</option>
                                                                     <option value="2">Bangalore</option>
@@ -375,25 +409,29 @@
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="staircase"
-                                                                    class="form-label fw-semibold">STAIRCASE :</label>
-                                                                    <input type="text" class="form-control" id="sheet">
+                                                                       class="form-label fw-semibold">STAIRCASE :</label>
+                                                                <input type="text" class="form-control" id="sheet">
                                                             </div>
                                                             <div class="col-md-6 mb-3">
-                                                                <label for="interior" class="form-label fw-semibold">INTERIOR
-                                                                    :</label>
-                                                                    <input type="text" class="form-control" id="interior">
+                                                                <label for="interior" class="form-label fw-semibold">
+                                                                    INTERIOR
+                                                                    :
+                                                                </label>
+                                                                <input type="text" class="form-control" id="interior">
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="cadastral-category"
-                                                                    class="form-label fw-semibold">CADASTRAL CATEGORY :</label>
-                                                                    <input type="tel" class="form-control" id="cadastral-category">
+                                                                       class="form-label fw-semibold">CADASTRAL CATEGORY :</label>
+                                                                <input type="tel" class="form-control" id="cadastral-category">
                                                             </div>
                                                             <div class="col-md-6 mb-3">
-                                                                <label for="sqm" class="form-label fw-semibold">SQM
-                                                                    :</label>
-                                                                    <input type="tel" class="form-control" id="sqm">
+                                                                <label for="sqm" class="form-label fw-semibold">
+                                                                    SQM
+                                                                    :
+                                                                </label>
+                                                                <input type="tel" class="form-control" id="sqm">
                                                             </div>
                                                         </div>
 
@@ -440,8 +478,8 @@
                                                                         <span class="badge bg-success-gradient">Tumkur</span>
                                                                         <span class="badge bg-success-gradient">Bangalore</span>
                                                                     </td>
-                                                                    <td><span
-                                                                        class="badge bg-success-gradient">Apartment</span>
+                                                                    <td>
+                                                                        <span class="badge bg-success-gradient">Apartment</span>
                                                                     </td>
                                                                     <td>
                                                                         Test
@@ -473,7 +511,7 @@
                                     </div>
                                     <div class="tab-pane" id="masterfields">
                                         <div class="container">
-                                            <div class="row">                                              
+                                            <div class="row">
                                                 <div class="col-md-12">
                                                     <form id="master_fields" action="" method="" class="form">
                                                         <div class="row">
@@ -486,13 +524,13 @@
                                                                 <input type="text" class="form-control" id="field-name">
                                                             </div>
                                                         </div>
-                                                        
+
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="datatype" class="form-label fw-semibold">DATA TYPE :</label>
                                                                 <input type="text" class="form-control" id="datatytpe">
                                                             </div>
-                                                        </div>                                                       
+                                                        </div>
 
                                                         <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">Submit</button>
                                                     </form>
@@ -529,7 +567,7 @@
                                     </div>
                                     <div class="tab-pane" id="mastertypes">
                                         <div class="container">
-                                            <div class="row">                                              
+                                            <div class="row">
                                                 <div class="col-md-12">
                                                     <form id="master_types" action="" method="" class="form">
                                                         <div class="row">
@@ -541,7 +579,7 @@
                                                                 <label for="description" class="form-label fw-semibold">DESCRIPTION:</label>
                                                                 <textarea rows="3" class="form-control" id="description"></textarea>
                                                             </div>
-                                                        </div>                                                    
+                                                        </div>
 
                                                         <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">Submit</button>
                                                     </form>
@@ -576,7 +614,7 @@
                                     </div>
                                     <div class="tab-pane" id="mastertypefields">
                                         <div class="container">
-                                            <div class="row">                                              
+                                            <div class="row">
                                                 <div class="col-md-12">
                                                     <form id="master_fields" action="" method="" class="form">
                                                         <div class="row">
@@ -587,7 +625,7 @@
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="mastertypeid" class="form-label fw-semibold">MASTER TYPE ID:</label>
                                                                 <select class="form-multi-select" id="mastertypeid"
-                                                                    multiple data-coreui-search="true">
+                                                                        multiple data-coreui-search="true">
                                                                     <option value="0">0</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -599,7 +637,7 @@
                                                             <div class="col-md-12 mb-3">
                                                                 <label for="masterfieldid" class="form-label fw-semibold">MASTER FIELD ID:</label>
                                                                 <select class="form-multi-select" id="masterfieldid"
-                                                                    multiple data-coreui-search="true">
+                                                                        multiple data-coreui-search="true">
                                                                     <option value="0">0</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -607,13 +645,13 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        
+
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="datatype" class="form-label fw-semibold">DATA TYPE :</label>
                                                                 <input type="text" class="form-control" id="datatytpe">
                                                             </div>
-                                                        </div>                                                       
+                                                        </div>
 
                                                         <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">Submit</button>
                                                     </form>
@@ -635,8 +673,8 @@
                                                                         <span class="badge bg-success-gradient">1</span>
                                                                         <span class="badge bg-success-gradient">2</span>
                                                                     </td>
-                                                                    <td><span
-                                                                        class="badge bg-success-gradient">3</span>
+                                                                    <td>
+                                                                        <span class="badge bg-success-gradient">3</span>
                                                                     </td>
                                                                     <td>
                                                                         Test
@@ -659,7 +697,7 @@
                                     </div>
                                     <div class="tab-pane" id="mastertypeSuppliers">
                                         <div class="container">
-                                            <div class="row">                                              
+                                            <div class="row">
                                                 <div class="col-md-12">
                                                     <form id="master_type_Suppliers" action="" method="" class="form">
                                                         <div class="row">
@@ -670,7 +708,7 @@
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="mastertypeid" class="form-label fw-semibold">MASTER TYPE ID:</label>
                                                                 <select class="form-multi-select" id="mastertypeid"
-                                                                    multiple data-coreui-search="true">
+                                                                        multiple data-coreui-search="true">
                                                                     <option value="0">0</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -682,7 +720,7 @@
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="suppliersid" class="form-label fw-semibold">SUPPLIERS ID:</label>
                                                                 <select class="form-multi-select" id="suppliersid"
-                                                                    multiple data-coreui-search="true">
+                                                                        multiple data-coreui-search="true">
                                                                     <option value="0">0</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -694,13 +732,13 @@
                                                                 <input type="text" class="form-control" id="quotedvalue">
                                                             </div>
                                                         </div>
-                                                        
+
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="datatype" class="form-label fw-semibold">DATA TYPE :</label>
                                                                 <input type="text" class="form-control" id="datatytpe">
                                                             </div>
-                                                        </div>                                                       
+                                                        </div>
 
                                                         <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">Submit</button>
                                                     </form>
@@ -723,8 +761,8 @@
                                                                         <span class="badge bg-success-gradient">Tumkur</span>
                                                                         <span class="badge bg-success-gradient">Bangalore</span>
                                                                     </td>
-                                                                    <td><span
-                                                                        class="badge bg-success-gradient">Apartment</span>
+                                                                    <td>
+                                                                        <span class="badge bg-success-gradient">Apartment</span>
                                                                     </td>
                                                                     <td>
                                                                         Test
@@ -764,7 +802,7 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="vendors/@coreui/icons/js/index.js"></script>
-    <script src="js/dataTables.bootstrap4.min.js"></script>    
+    <script src="js/dataTables.bootstrap4.min.js"></script>
     <script src="js/jquery.dataTables.js"></script>
     <script src="vendors/@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
     <script src="vendors/simplebar/js/simplebar.min.js"></script>

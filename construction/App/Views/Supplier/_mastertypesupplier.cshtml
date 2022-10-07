@@ -1,0 +1,94 @@
+﻿@model App.Models.suppliermodel
+
+@{
+    var isactive = Model.tabid == 5 ? "active" : "inactive";
+}
+<div class="tab-pane @isactive" id="mastertypeSuppliers">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="master_type_Suppliers" action="" method="" class="form">
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label for="mastertypeid" class="form-label fw-semibold">MASTER TYPE ID:</label>
+                            <select class="form-multi-select" id="mastertypeid"
+                                    multiple data-coreui-search="true">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="suppliersid" class="form-label fw-semibold">SUPPLIERS ID:</label>
+                            <select class="form-multi-select" id="suppliersid"
+                                    multiple data-coreui-search="true">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label for="quotedvalue" class="form-label fw-semibold">QUOTED VALUE:</label>
+                            <input type="text" class="form-control" id="quotedvalue">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">Submit</button>
+                </form>
+
+
+
+
+                <div class="list-view">
+                    <table id="mastertypesuppliers-list" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>MASTER TYPE ID</th>
+                                <th>SUPPLIERS ID</th>
+                                <th>QUOTED VALUE</th>
+
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.mastertypesupplierlist != null)
+                            {
+                                @foreach (var x in Model.mastertypesupplierlist)
+                                {
+                                    <tr>
+                                        <td>@x.id</td>
+                                        <td>
+                                            <span class="badge bg-success-gradient">@x.mastertype.description</span>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-success-gradient">@x.supplier.name</span>
+                                        </td>
+                                        <td>
+                                            @x.quotedvalue
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-success me-2" href="/user/editpage/@x.id">
+                                                <i class="cil-pencil icon icon-sm"></i>
+                                            </a>
+                                            <a class="btn btn-info me-2" href="/user/editpage/@x.id">
+                                                <i class="cil-trash icon icon-sm"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

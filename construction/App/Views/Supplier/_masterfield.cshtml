@@ -1,0 +1,71 @@
+﻿@model App.Models.suppliermodel
+
+@{
+    var isactive = Model.tabid == 2 ? "active" : "inactive";
+}
+
+<div class="tab-pane @isactive" id="masterfields">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-controller="supplier" asp-action="addmasterfield" id="master_fields"  method="post" class="form">
+                    <div class="row">
+
+                        <input type="hidden" asp-for="tabid">
+                        <input type="hidden" asp-for="masterfield.id">
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="field-name" class="form-label fw-semibold">NAME:</label>
+                            <input asp-for="masterfield.name" type="text" class="form-control" id="field-name">
+                        </div>
+
+                         <div class="col-md-6 mb-3">
+                            <label for="datatype" class="form-label fw-semibold">DATA TYPE :</label>
+                            <input asp-for="masterfield.datatype" type="text" class="form-control" id="datatytpe">
+                        </div>
+                    </div>
+ 
+
+                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">Submit</button>
+                </form>
+
+
+
+                <div class="list-view">
+                    <table id="masterfields-list" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NAME</th>
+                                <th>DATA TYPE</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.masterfieldlist != null)
+                            {
+                                @foreach (var x in Model.masterfieldlist)
+                                {
+                                    <tr>
+                                        <td>@x.id</td>
+                                        <td>@x.name</td>
+                                        <td>@x.datatype</td>
+                                        <td>
+                                            <a class="btn btn-success me-2" href="/supplier/editmasterfield/@x.id">
+                                                <i class="cil-pencil icon icon-sm"></i>
+                                            </a>
+                                            <a class="btn btn-info me-2" href="/supplier/deletemasterfield/@x.id">
+                                                <i class="cil-trash icon icon-sm"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

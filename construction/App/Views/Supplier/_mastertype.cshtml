@@ -1,0 +1,61 @@
+﻿@model App.Models.suppliermodel
+
+@{
+    var isactive = Model.tabid == 1 ? "active" : "inactive";
+}
+<div class="tab-pane @isactive" id="mastertypes">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <form id="master_types" asp-controller="supplier" asp-action="addmastertype" method="post" class="form">
+                    <div class="row">
+                        <input type="hidden" asp-for="tabid">
+                        <input type="hidden" asp-for="mastertype.id">
+
+                        <div class="col-md-12 mb-3">
+                            <label for="description" class="form-label fw-semibold">DESCRIPTION:</label>
+                            <textarea asp-for="mastertype.description" rows="3" class="form-control" id="description"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">Submit</button>
+                </form>
+
+
+                <div class="list-view">
+                    <table id="mastertype-list" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>DESCRIPTION</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.mastertypelist != null)
+                            {
+                                @foreach (var x in Model.mastertypelist)
+                                {
+                                    <tr>
+                                        <td>@x.id</td>
+                                        <td>@x.description</td>
+                                        <td>
+                                            <a class="btn btn-success me-2" href="/supplier/editmastertype/@x.id">
+                                                <i class="cil-pencil icon icon-sm"></i>
+                                            </a>
+                                            <a class="btn btn-info me-2" href="/supplier/deletemastertype/@x.id">
+                                                <i class="cil-trash icon icon-sm"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
