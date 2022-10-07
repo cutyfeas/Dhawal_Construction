@@ -7,35 +7,44 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form id="master_type_Suppliers" action="" method="" class="form">
+                <form asp-controller="supplier" asp-action="addmastertypesupplier" id="master_type_Suppliers" method="post" class="form">
                     <div class="row">
+
+                        <input type="hidden" asp-for="tabid">
+                        <input type="hidden" asp-for="mastertypesupplier.id">
 
                         <div class="col-md-6 mb-3">
                             <label for="mastertypeid" class="form-label fw-semibold">MASTER TYPE ID:</label>
-                            <select class="form-multi-select" id="mastertypeid"
-                                    multiple data-coreui-search="true">
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
+
+                            <select required class="form-control" id="roleId" asp-for="mastertypesupplier.mastertypeid" asp-items="@(new SelectList(Model.mastertypelist,"id","description"))"></select>
+
+                            @* <select class="form-multi-select" id="mastertypeid"
+                            multiple data-coreui-search="true">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            </select>*@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="suppliersid" class="form-label fw-semibold">SUPPLIERS ID:</label>
-                            <select class="form-multi-select" id="suppliersid"
-                                    multiple data-coreui-search="true">
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
+
+                            <select required class="form-control" id="roleId" asp-for="mastertypesupplier.supplierid" asp-items="@(new SelectList(Model.supplierlist,"id","name"))"></select>
+
+                            @*<select class="form-multi-select" id="suppliersid"
+                            multiple data-coreui-search="true">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            </select>*@
                         </div>
                     </div>
                     <div class="row">
 
                         <div class="col-md-6 mb-3">
                             <label for="quotedvalue" class="form-label fw-semibold">QUOTED VALUE:</label>
-                            <input type="text" class="form-control" id="quotedvalue">
+                            <input required asp-for="mastertypesupplier.quotedvalue" type="text" class="form-control" id="quotedvalue">
                         </div>
                     </div>
 
@@ -74,10 +83,10 @@
                                             @x.quotedvalue
                                         </td>
                                         <td>
-                                            <a class="btn btn-success me-2" href="/user/editpage/@x.id">
+                                            <a class="btn btn-success me-2" href="/supplier/editmastertypesupplier/@x.id">
                                                 <i class="cil-pencil icon icon-sm"></i>
                                             </a>
-                                            <a class="btn btn-info me-2" href="/user/editpage/@x.id">
+                                            <a class="btn btn-info me-2" href="/supplier/deletemastertypesupplier/@x.id">
                                                 <i class="cil-trash icon icon-sm"></i>
                                             </a>
                                         </td>

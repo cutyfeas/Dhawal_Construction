@@ -7,29 +7,33 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form id="master_fields" action="" method="" class="form">
+                <form asp-controller="supplier" asp-action="addmastertypefield" id="master_fields"  method="post" class="form">
                     <div class="row">
-
+                        <input type="hidden" asp-for="tabid">
+                        <input type="hidden" asp-for="mastertypefield.id">
                         <div class="col-md-6 mb-3">
                             <label for="mastertypeid" class="form-label fw-semibold">MASTER TYPE ID:</label>
-                            <select class="form-multi-select" id="mastertypeid"
+
+                            <select required class="form-control" id="roleId" asp-for="mastertypefield.mastertypeid" asp-items="@(new SelectList(Model.mastertypelist,"id","description"))"></select>
+                            @* <select class="form-multi-select" id="mastertypeid"
                                     multiple data-coreui-search="true">
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
-                            </select>
+                            </select>*@
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label for="masterfieldid" class="form-label fw-semibold">MASTER FIELD ID:</label>
-                            <select class="form-multi-select" id="masterfieldid"
+                            <select required class="form-control" id="roleId" asp-for="mastertypefield.masterfieldid" asp-items="@(new SelectList(Model.masterfieldlist,"id","name"))"></select>
+                            @*<select class="form-multi-select" id="masterfieldid"
                                     multiple data-coreui-search="true">
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
-                            </select>
+                            </select>*@
                         </div>
 
                     </div>
@@ -65,10 +69,10 @@
                                         </td>
 
                                         <td>
-                                            <a class="btn btn-success me-2" href="/user/editpage/@x.id">
+                                            <a class="btn btn-success me-2" href="/supplier/editmastertypefield/@x.id">
                                                 <i class="cil-pencil icon icon-sm"></i>
                                             </a>
-                                            <a class="btn btn-info me-2" href="/user/editpage/@x.id">
+                                            <a class="btn btn-info me-2" href="/supplier/deletemastertypefield/@x.id">
                                                 <i class="cil-trash icon icon-sm"></i>
                                             </a>
                                         </td>

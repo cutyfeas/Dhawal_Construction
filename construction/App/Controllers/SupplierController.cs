@@ -39,11 +39,25 @@ namespace App.Controllers
             else if (tabid == 2)
                 masterfieldlist = await SupplierService.GetAll_masterfieldlist();
             else if (tabid == 3)
+            {
+                mastertypelist = await SupplierService.GetAll_mastertypelist();
+                mastertypelist.Insert(0, new tbl_mastertype { id = 0, description = "--Select--" });
+                masterfieldlist = await SupplierService.GetAll_masterfieldlist();
+                masterfieldlist.Insert(0, new tbl_masterfields { id = 0, name = "--Select--" });
+
                 mastertypefieldlist = await SupplierService.GetAll_mastertypefieldlist();
+            }
             else if (tabid == 4)
                 supplierlist = await SupplierService.GetAll_supplierlist();
             else if (tabid == 5)
+            {
+                mastertypelist = await SupplierService.GetAll_mastertypelist();
+                mastertypelist.Insert(0, new tbl_mastertype { id = 0, description = "--Select--" });
+                supplierlist = await SupplierService.GetAll_supplierlist();
+                supplierlist.Insert(0, new tbl_suppliers { id = 0, name = "--Select--" });
+
                 mastertypesupplierlist = await SupplierService.GetAll_mastertypesupplierlist();
+            }
 
 
             var model = new suppliermodel
@@ -141,8 +155,51 @@ namespace App.Controllers
 
         #endregion
 
+        #region viewmastertypefield
 
-        #region supplier
+        public async Task<IActionResult> viewmastertypefield()
+        {
+            return RedirectToAction("Index", new { tabid = 3 });
+        }
+        [HttpPost]
+        public async Task<IActionResult> addmastertypefield(suppliermodel m)
+        {
+            if (m.mastertypefield.id == 0)
+                await SupplierService.Add_mastertypefield(m);
+            else
+                await SupplierService.Update_mastertypefield(m);
+            return RedirectToAction("viewmastertypefield");
+        }
+        public async Task<IActionResult> deletemastertypefield(int id)
+        {
+            var data = await SupplierService.Delete_mastertypefield(id);
+            return RedirectToAction("viewmastertypefield");
+        }
+        public async Task<IActionResult> editmastertypefield(int id)
+        {
+            var list = await SupplierService.GetAll_mastertypefieldlist();
+            var e = await SupplierService.GetAll_mastertypefield(id);
+            var model = new suppliermodel
+            {
+                tabid = 3,
+                mastertypefieldlist = list,
+                mastertypelist = await SupplierService.GetAll_mastertypelist(),
+                masterfieldlist = await SupplierService.GetAll_masterfieldlist(),
+                mastertypefield = new tbl_mastertypefields
+                {
+                    id = e.id,
+                    mastertypeid = e.mastertypeid,
+                    masterfieldid = e.masterfieldid,
+                }
+
+            };
+            return View("Index", model);
+        }
+
+        #endregion
+
+
+        #region viewsupplier
         public async Task<IActionResult> viewsupplier()
         {
             return RedirectToAction("Index", new { tabid = 4 });
@@ -181,17 +238,51 @@ namespace App.Controllers
         #endregion
 
 
-
-        public async Task<IActionResult> viewmastertypefield()
-        {
-
-            return RedirectToAction("Index", new { tabid = 3 });
-        }
-       
+        #region viewmastertypesupplier
         public async Task<IActionResult> viewmastertypesupplier()
         {
 
             return RedirectToAction("Index", new { tabid = 5 });
         }
+        [HttpPost]
+        public async Task<IActionResult> addmastertypesupplier(suppliermodel m)
+        {
+            if (m.mastertypesupplier.id == 0)
+                await SupplierService.Add_mastertypesupplier(m);
+            else
+                await SupplierService.Update_mastertypesupplier(m);
+            return RedirectToAction("viewmastertypesupplier");
+        }
+        public async Task<IActionResult> deletemastertypesupplier(int id)
+        {
+            var data = await SupplierService.Delete_mastertypesupplier(id);
+            return RedirectToAction("viewmastertypesupplier");
+        }
+        public async Task<IActionResult> editmastertypesupplier(int id)
+        {
+            var list = await SupplierService.GetAll_mastertypesupplierlist();
+            var e = await SupplierService.GetAll_mastertypesupplier(id);
+            var model = new suppliermodel
+            {
+                tabid = 5,
+                mastertypelist = await SupplierService.GetAll_mastertypelist(),
+                supplierlist = await SupplierService.GetAll_supplierlist(),
+                mastertypesupplierlist = list,
+
+                mastertypesupplier = new tbl_mastertype_supplier_map
+                {
+                    id = e.id,
+                    mastertypeid = e.mastertypeid,
+                    supplierid = e.supplierid,
+                    quotedvalue = e.quotedvalue,
+                }
+
+            };
+            return View("Index", model);
+        }
+        #endregion
+
+
+
     }
 }
