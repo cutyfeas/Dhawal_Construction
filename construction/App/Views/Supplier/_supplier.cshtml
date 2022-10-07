@@ -8,22 +8,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-12">
-                <form id="suppliers" action="" method="" class="form">
+                <form asp-controller="supplier" asp-action="addsupplier" id="suppliers" method="post" class="form">
                     <div class="row">
-                         
+                        <input type="hidden" asp-for="tabid">
+                        <input type="hidden" asp-for="supplier.id">
                         <div class="col-md-6 mb-3">
-                            <label for="name"
-                                   class="form-label fw-semibold">
-                                NAME
-                                :
-                            </label>
-                            <input type="text" class="form-control"
-                                   id="name">
+                            <label for="name" class="form-label fw-semibold">NAME: </label>
+                            <input asp-for="supplier.name" type="text" class="form-control" id="name">
                         </div>
                     </div>
-                    
 
-                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">ADD SUPPLIERS</button>
+
+                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end">submit</button>
                 </form>
 
 
@@ -49,10 +45,10 @@
                                         <td>@x.id</td>
                                         <td>@x.name</td>
                                         <td>
-                                            <a class="btn btn-success me-2" href="/user/editpage/@x.id">
+                                            <a class="btn btn-success me-2" href="/supplier/editsupplier/@x.id">
                                                 <i class="cil-pencil icon icon-sm"></i>
                                             </a>
-                                            <a class="btn btn-info me-2" href="/user/editpage/@x.id">
+                                            <a class="btn btn-info me-2" href="/supplier/deletesupplier/@x.id">
                                                 <i class="cil-trash icon icon-sm"></i>
                                             </a>
                                         </td>

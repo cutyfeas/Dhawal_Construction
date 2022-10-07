@@ -13,7 +13,7 @@ namespace App.Entity
         }
 
         public int id { get; set; }
-        public int? name { get; set; }
+        public string name { get; set; }
         public int? createdby { get; set; }
         public int? updatedby { get; set; }
         public DateTime? createddate { get; set; }

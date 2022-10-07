@@ -270,6 +270,8 @@ namespace App.Entity
             {
                 entity.Property(e => e.createddate).HasColumnType("datetime");
 
+                entity.Property(e => e.name).HasMaxLength(500);
+
                 entity.Property(e => e.updateddate).HasColumnType("datetime");
             });
 

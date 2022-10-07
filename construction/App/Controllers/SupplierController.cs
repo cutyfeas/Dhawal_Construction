@@ -142,20 +142,52 @@ namespace App.Controllers
         #endregion
 
 
+        #region supplier
+        public async Task<IActionResult> viewsupplier()
+        {
+            return RedirectToAction("Index", new { tabid = 4 });
+        }
+        [HttpPost]
+        public async Task<IActionResult> addsupplier(suppliermodel m)
+        {
+            if (m.supplier.id == 0)
+                await SupplierService.Add_supplier(m);
+            else
+                await SupplierService.Update_supplier(m);
+            return RedirectToAction("viewsupplier");
+        }
+        public async Task<IActionResult> deletesupplier(int id)
+        {
+            var data = await SupplierService.Delete_supplier(id);
+            return RedirectToAction("viewsupplier");
+        }
+        public async Task<IActionResult> editsupplier(int id)
+        {
+            var list = await SupplierService.GetAll_supplierlist();
+            var e = await SupplierService.GetAll_supplier(id);
+            var model = new suppliermodel
+            {
+                tabid = 4,
+                supplierlist = list,
+                supplier = new tbl_suppliers
+                {
+                    id = e.id,
+                    name = e.name,
+                }
+
+            };
+            return View("Index", model);
+        }
+        #endregion
 
 
 
-        
         public async Task<IActionResult> viewmastertypefield()
         {
 
             return RedirectToAction("Index", new { tabid = 3 });
         }
-        public async Task<IActionResult> viewsupplier()
-        {
-
-            return RedirectToAction("Index", new { tabid = 4 });
-        }
+       
         public async Task<IActionResult> viewmastertypesupplier()
         {
 

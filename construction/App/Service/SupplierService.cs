@@ -33,7 +33,15 @@ namespace App.Service
 
         Task<List<tbl_mastertypefields>> GetAll_mastertypefieldlist();
         Task<List<tbl_mastertype_supplier_map>> GetAll_mastertypesupplierlist();
+
+
+
+
         Task<List<tbl_suppliers>> GetAll_supplierlist();
+        Task<int> Add_supplier(suppliermodel m);
+        Task<int> Update_supplier(suppliermodel m);
+        Task<int> Delete_supplier(int id);
+        Task<tbl_suppliers> GetAll_supplier(int id);
 
     }
     public class SupplierService : ISupplierService
@@ -213,7 +221,86 @@ namespace App.Service
         #endregion
 
 
+        #region supplier
+        public async Task<List<tbl_suppliers>> GetAll_supplierlist()
+        {
+            if (db != null)
+            {
+                return await db.tbl_suppliers.ToListAsync();
+            }
 
+            return null;
+        }
+
+        public async Task<int> Add_supplier(suppliermodel m)
+        {
+            var e = m.supplier;
+            e.createddate = DateTime.Now;
+            if (db != null)
+            {
+                await db.tbl_suppliers.AddAsync(e);
+                await db.SaveChangesAsync();
+
+                return e.id;
+            }
+            return 0;
+        }
+
+        public async Task<int> Update_supplier(suppliermodel m)
+        {
+            int result = 0;
+            var e = await db.tbl_suppliers.FirstOrDefaultAsync(x => x.id == m.supplier.id);
+
+            e.name = m.supplier.name;
+            e.updateddate = System.DateTime.Now;
+
+
+            if (db != null)
+            {
+                //Delete that data
+                db.tbl_suppliers.Update(e);
+                //Commit the transaction
+                await db.SaveChangesAsync();
+                return e.id;
+            }
+            return result;
+        }
+
+        public async Task<int> Delete_supplier(int id)
+        {
+            int result = 0;
+
+            if (db != null)
+            {
+                //Find the data for specific data id
+                var e = await db.tbl_suppliers.FirstOrDefaultAsync(x => x.id == id);
+
+                if (e != null)
+                {
+                    //Delete that data
+                    db.tbl_suppliers.Remove(e);
+
+                    //Commit the transaction
+                    result = await db.SaveChangesAsync();
+                }
+                return result;
+            }
+
+            return result;
+        }
+
+        public async Task<tbl_suppliers> GetAll_supplier(int id)
+        {
+            if (db != null)
+            {
+                return await (from p in db.tbl_suppliers
+                              where p.id == id
+                              select p).FirstOrDefaultAsync();
+            }
+
+            return null;
+        }
+        #endregion
 
 
 
@@ -230,15 +317,7 @@ namespace App.Service
             return null;
         }
 
-        public async Task<List<tbl_suppliers>> GetAll_supplierlist()
-        {
-            if (db != null)
-            {
-                return await db.tbl_suppliers.ToListAsync();
-            }
-
-            return null;
-        }
+        
 
         public async Task<List<tbl_mastertype_supplier_map>> GetAll_mastertypesupplierlist()
         {
