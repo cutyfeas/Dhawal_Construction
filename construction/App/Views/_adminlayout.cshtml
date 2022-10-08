@@ -35,7 +35,9 @@
 <body>
     @RenderBody()
 
-    @*@Html.Partial("_adminsidebar.cshtml");*@
+    <partial name="_adminsidebar.cshtml" for="@Model">
+
+    @*@Html.Partial(".cshtml");*@
 
  
        
