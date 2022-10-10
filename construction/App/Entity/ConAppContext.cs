@@ -61,8 +61,6 @@ namespace App.Entity
 
             modelBuilder.Entity<tbl_apartment>(entity =>
             {
-                entity.Property(e => e.id).ValueGeneratedNever();
-
                 entity.Property(e => e.area).HasMaxLength(50);
 
                 entity.Property(e => e.building).HasMaxLength(50);
@@ -144,8 +142,6 @@ namespace App.Entity
 
             modelBuilder.Entity<tbl_condominium>(entity =>
             {
-                entity.Property(e => e.id).ValueGeneratedNever();
-
                 entity.Property(e => e.address).HasMaxLength(50);
 
                 entity.Property(e => e.administrator).HasMaxLength(50);

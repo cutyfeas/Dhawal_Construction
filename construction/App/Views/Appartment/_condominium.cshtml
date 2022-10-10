@@ -1,0 +1,167 @@
+﻿@model App.Models.appartmentmodel
+
+@{
+    var isactive = Model.tabid == 1 ? "active" : "inactive";
+}
+
+<div class="tab-pane @isactive" id="condominium">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <form asp-controller="appartment" asp-action="addcondominium" id="condominium-data" method="post" class="form">
+                    <input type="hidden" asp-for="tabid">
+                    <input type="hidden" asp-for="condominium.id">
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label for="condominium-name"
+                                   class="form-label fw-semibold">
+                                CONDOMINIUM NAME
+                                :
+                            </label>
+                            <input asp-for="condominium.condominium_name" required type="text" class="form-control"
+                                   id="condominium-name">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="tax" class="form-label fw-semibold">
+                                TAX
+                                CODE
+                            </label>
+                            <input asp-for="condominium.taxcode" required type="text" class="form-control" id="tax">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="address"
+                                   class="form-label fw-semibold">ADDRESS :</label>
+                            <textarea asp-for="condominium.address" required rows="2" class="form-control"
+                                      id="address"></textarea>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="location"
+                                   class="form-label fw-semibold">LOCATION :</label>
+                            <input asp-for="condominium.location" required type="text" class="form-control" id="location">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="vat" class="form-label fw-semibold">
+                                VAT
+                                NUMBER :
+                            </label>
+                            <input asp-for="condominium.vatnumber" required type="text" class="form-control" id="vat">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="administrator"
+                                   class="form-label fw-semibold">
+                                ADMINISTRATOR
+                                :
+                            </label>
+                            <input asp-for="condominium.administrator" required type="text" class="form-control"
+                                   id="administrator">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="lat" class="form-label fw-semibold">
+                                LAT
+                                :
+                            </label>
+                            <input asp-for="condominium.lat" required type="text" class="form-control" id="lat">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lng" class="form-label fw-semibold">
+                                LNG
+                                :
+                            </label>
+                            <input asp-for="condominium.lng" required type="text" class="form-control" id="lng">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="buildings"
+                                   class="form-label fw-semibold">BUILDINGS :</label>
+
+                            <input asp-for="condominium.buildings" required type="text" class="form-control" id="buildings">
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="users" class="form-label fw-semibold">
+                                USERS
+                                :
+                            </label>
+                            <input asp-for="condominium.users" required type="text" class="form-control" id="users">
+
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end ">
+                        Submit
+                    </button>
+                </form>
+
+
+
+
+
+
+                <div class="list-view">
+                    <table id="condominium-list" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>CONDOMINIUM NAME</th>
+                                <th>ADDRESS</th>
+                                <th>LOCATION</th>
+                                <th>TAX CODE</th>
+                                <th>VAT NUMBER</th>
+                                <th>ADMINISTRATOR</th>
+                                <th>LAT</th>
+                                <th>LNG</th>
+                                <th>BUILDINGS</th>
+                                <th>USERS</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.condominiumlist != null)
+                            {
+                                @foreach (var x in Model.condominiumlist)
+                                {
+                                    <tr>
+                                        <td>@x.id</td>
+                                        <td>@x.condominium_name</td>
+                                        <td>@x.address</td>
+                                        <td>@x.location</td>
+                                        <td>@x.taxcode</td>
+                                        <td>@x.vatnumber</td>
+                                        <td>@x.administrator</td>
+                                        <td>@x.lat</td>
+                                        <td>@x.lng</td>
+                                        <td>
+                                            <span class="badge bg-success-gradient">@x.buildings</span>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-success-gradient">@x.users</span>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-success me-2" href="\appartment\editcondominium\@x.id">
+                                                <i class="cil-pencil icon icon-sm"></i>
+                                            </a>
+                                            <a class="btn btn-info me-2"
+                                       href="\appartment\deletecondominium\@x.id">
+                                                <i class="cil-trash icon icon-sm"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

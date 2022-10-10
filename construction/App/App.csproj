@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Entity - Copy %282%29\**" />
     <Compile Remove="Entity - Copy\**" />
+    <Content Remove="Entity - Copy %282%29\**" />
     <Content Remove="Entity - Copy\**" />
+    <EmbeddedResource Remove="Entity - Copy %282%29\**" />
     <EmbeddedResource Remove="Entity - Copy\**" />
+    <None Remove="Entity - Copy %282%29\**" />
     <None Remove="Entity - Copy\**" />
   </ItemGroup>
 

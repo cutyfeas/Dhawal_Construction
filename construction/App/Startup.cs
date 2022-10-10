@@ -42,7 +42,7 @@ namespace App
             services.AddScoped<Itbl_pageservice, tbl_pageservice>();
             services.AddScoped<Itbl_role_pageService, tbl_role_pageService>();
             services.AddScoped<ISupplierService, SupplierService>();
-            //services.AddScoped<ITblMastertypefieldService, TblMastertypefieldService>();
+            services.AddScoped<IAppartmentService, AppartmentService>();
 
             //services.AddScoped<ITblMastertypeService, TblMastertypeService>();
             //services.AddScoped<ITblMastertypeSupplierMapService, TblMastertypeSupplierMapService>();

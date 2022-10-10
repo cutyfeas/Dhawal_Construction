@@ -16,65 +16,68 @@
     <link href="~/proj/css/examples.css" rel="stylesheet">
     <link href="~/proj/vendors/@@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">*@
 
-        <link rel="stylesheet" href="~/proj/vendors/simplebar/css/simplebar.css">
-        <link rel="stylesheet" href="~/proj/css/vendors/simplebar.css">
-        <link rel="stylesheet" href="~/proj/vendors/@@coreui/icons/css/brand.css">    
-        <link rel="stylesheet" href="~/proj/vendors/@@coreui/icons/css/flag.css">    
-        <link rel="stylesheet" href="~/proj/vendors/@@coreui/icons/css/free.css">
-        <link rel="stylesheet" href="https://unpkg.com/@@coreui/icons/css/brand.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/@@coreui/icons/css/flag.min.css">
-        <link href="~/proj/css/style.css" rel="stylesheet">
-        <link href="~/proj/css/examples.css" rel="stylesheet">
-        <link href="~/proj/vendors/@@coreui/icons/css/all.min.css">
-        <link rel="stylesheet" href="~/proj/css/dataTables.jqueryui.min.css">
-        <link href="~/proj/vendors/@@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
-        <link rel="stylesheet" href="~/proj/vendors/DataTables/datatables.min.css">
-        <link rel="stylesheet" href="~/proj/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="~/proj/vendors/simplebar/css/simplebar.css">
+    <link rel="stylesheet" href="~/proj/css/vendors/simplebar.css">
+    <link rel="stylesheet" href="~/proj/vendors/@@coreui/icons/css/brand.css">
+    <link rel="stylesheet" href="~/proj/vendors/@@coreui/icons/css/flag.css">
+    <link rel="stylesheet" href="~/proj/vendors/@@coreui/icons/css/free.css">
+    <link rel="stylesheet" href="https://unpkg.com/@@coreui/icons/css/brand.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@@coreui/icons/css/flag.min.css">
+    <link href="~/proj/css/style.css" rel="stylesheet">
+    <link href="~/proj/css/examples.css" rel="stylesheet">
+    <link href="~/proj/vendors/@@coreui/icons/css/all.min.css">
+    <link rel="stylesheet" href="~/proj/css/dataTables.jqueryui.min.css">
+    <link href="~/proj/vendors/@@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/proj/vendors/DataTables/datatables.min.css">
+    <link rel="stylesheet" href="~/proj/css/dataTables.bootstrap4.css">
 </head>
 
 <body>
 
     <partial name="_adminsidebar.cshtml" for="@Model">
-    
-    @RenderBody()
 
-    @*@Html.Partial(".cshtml");*@
+        @RenderBody()
 
- 
-       
+        @*@Html.Partial(".cshtml");*@
 
-   @* <script src="~/proj/vendors/@@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
-    <script src="~/proj/vendors/simplebar/js/simplebar.min.js"></script>
-    <script src="~/proj/vendors/chart.js/js/chart.min.js"></script>
-    <script src="~/proj/vendors/@@coreui/chartjs/js/coreui-chartjs.js"></script>
-    <script src="~/proj/vendors/@@coreui/utils/js/coreui-utils.js"></script>
-    <script src="~/proj/js/main.js"></script>*@
-   
-     <script src="~/proj/js/jquery.min.js"></script>
-    <script src="~/proj/vendors/@@coreui/icons/js/index.js"></script>
-    <script src="~/proj/js/dataTables.bootstrap4.min.js"></script>    
-    <script src="~/proj/js/jquery.dataTables.js"></script>
-    <script src="~/proj/vendors/@@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
-    <script src="~/proj/vendors/simplebar/js/simplebar.min.js"></script>
-    <script src="~/proj/vendors/chart.js/js/chart.min.js"></script>
-    <script src="~/proj/vendors/@@coreui/chartjs/js/coreui-chartjs.js"></script>
-    <script src="~/proj/vendors/@@coreui/utils/js/coreui-utils.js"></script>
-    <script src="~/proj/js/main.js"></script>
-    <script src="~/proj/vendors/DataTables/datatables.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#role-list').DataTable();
-            $('#page-list').DataTable();
-            $('#rolePage-lists').DataTable();
-            $('#user-lists').DataTable();
 
-            $('#supplier-list').DataTable();
-            $('#masterfields-list').DataTable();
-            $('#mastertype-list').DataTable();
-            $('#mastertypefield-lists').DataTable();
-            $('#mastertypesuppliers-list').DataTable();
-        });
-    </script>
+
+
+        @* <script src="~/proj/vendors/@@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
+        <script src="~/proj/vendors/simplebar/js/simplebar.min.js"></script>
+        <script src="~/proj/vendors/chart.js/js/chart.min.js"></script>
+        <script src="~/proj/vendors/@@coreui/chartjs/js/coreui-chartjs.js"></script>
+        <script src="~/proj/vendors/@@coreui/utils/js/coreui-utils.js"></script>
+        <script src="~/proj/js/main.js"></script>*@
+
+        <script src="~/proj/js/jquery.min.js"></script>
+        <script src="~/proj/vendors/@@coreui/icons/js/index.js"></script>
+        <script src="~/proj/js/dataTables.bootstrap4.min.js"></script>
+        <script src="~/proj/js/jquery.dataTables.js"></script>
+        <script src="~/proj/vendors/@@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
+        <script src="~/proj/vendors/simplebar/js/simplebar.min.js"></script>
+        <script src="~/proj/vendors/chart.js/js/chart.min.js"></script>
+        <script src="~/proj/vendors/@@coreui/chartjs/js/coreui-chartjs.js"></script>
+        <script src="~/proj/vendors/@@coreui/utils/js/coreui-utils.js"></script>
+        <script src="~/proj/js/main.js"></script>
+        <script src="~/proj/vendors/DataTables/datatables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#role-list').DataTable();
+                $('#page-list').DataTable();
+                $('#rolePage-lists').DataTable();
+                $('#user-lists').DataTable();
+
+                $('#supplier-list').DataTable();
+                $('#masterfields-list').DataTable();
+                $('#mastertype-list').DataTable();
+                $('#mastertypefield-lists').DataTable();
+                $('#mastertypesuppliers-list').DataTable();
+
+                $('#condominium-list').DataTable();
+                $('#apartment-lists').DataTable();
+            });
+        </script>
 
 </body>
 
