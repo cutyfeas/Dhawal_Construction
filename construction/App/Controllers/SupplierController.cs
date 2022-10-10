@@ -41,9 +41,9 @@ namespace App.Controllers
             else if (tabid == 3)
             {
                 mastertypelist = await SupplierService.GetAll_mastertypelist();
-                mastertypelist.Insert(0, new tbl_mastertype { id = 0, description = "--Select--" });
+                //mastertypelist.Insert(0, new tbl_mastertype { id = 0, description = "--Select--" });
                 masterfieldlist = await SupplierService.GetAll_masterfieldlist();
-                masterfieldlist.Insert(0, new tbl_masterfields { id = 0, name = "--Select--" });
+                //masterfieldlist.Insert(0, new tbl_masterfields { id = 0, name = "--Select--" });
 
                 mastertypefieldlist = await SupplierService.GetAll_mastertypefieldlist();
             }
@@ -52,9 +52,9 @@ namespace App.Controllers
             else if (tabid == 5)
             {
                 mastertypelist = await SupplierService.GetAll_mastertypelist();
-                mastertypelist.Insert(0, new tbl_mastertype { id = 0, description = "--Select--" });
+               // mastertypelist.Insert(0, new tbl_mastertype { id = 0, description = "--Select--" });
                 supplierlist = await SupplierService.GetAll_supplierlist();
-                supplierlist.Insert(0, new tbl_suppliers { id = 0, name = "--Select--" });
+               // supplierlist.Insert(0, new tbl_suppliers { id = 0, name = "--Select--" });
 
                 mastertypesupplierlist = await SupplierService.GetAll_mastertypesupplierlist();
             }

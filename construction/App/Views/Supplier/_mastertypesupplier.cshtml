@@ -16,7 +16,9 @@
                         <div class="col-md-6 mb-3">
                             <label for="mastertypeid" class="form-label fw-semibold">MASTER TYPE ID:</label>
 
-                            <select required class="form-control" id="roleId" asp-for="mastertypesupplier.mastertypeid" asp-items="@(new SelectList(Model.mastertypelist,"id","description"))"></select>
+                            <select required class="form-control" id="roleId" asp-for="mastertypesupplier.mastertypeid" asp-items="@(new SelectList(Model.mastertypelist,"id","description"))">
+                                <option value="" selected>--- SELECT ---</option>
+                            </select>
 
                             @* <select class="form-multi-select" id="mastertypeid"
                             multiple data-coreui-search="true">
@@ -29,7 +31,9 @@
                         <div class="col-md-6 mb-3">
                             <label for="suppliersid" class="form-label fw-semibold">SUPPLIERS ID:</label>
 
-                            <select required class="form-control" id="roleId" asp-for="mastertypesupplier.supplierid" asp-items="@(new SelectList(Model.supplierlist,"id","name"))"></select>
+                            <select required class="form-control" id="roleId" asp-for="mastertypesupplier.supplierid" asp-items="@(new SelectList(Model.supplierlist,"id","name"))">
+                                <option value="" selected>--- SELECT ---</option>
+                            </select>
 
                             @*<select class="form-multi-select" id="suppliersid"
                             multiple data-coreui-search="true">

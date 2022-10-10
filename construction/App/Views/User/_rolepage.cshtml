@@ -21,7 +21,9 @@
 
                         <div class="col-md-6 mb-3">
                             <label for="roleId" class="form-label fw-semibold">ROLE ID:</label>
-                            <select class="form-control" id="roleId" asp-for="roleid" asp-items="@(new SelectList(Model.rolelist,"id","rolename"))"></select>
+                            <select required class="form-control" id="roleId" asp-for="roleid" asp-items="@(new SelectList(Model.rolelist,"id","rolename"))">
+                                <option value="" selected>--- SELECT ---</option>
+                            </select>
 
                             @*<select class="form-control" id="roleId"
                                 data-coreui-search="true">
@@ -36,7 +38,8 @@
                         <div class="col-md-6 mb-3">
                             <label for="pageId" class="form-label fw-semibold">PAGE ID:</label>
 
-                            <select class="form-control" id="pageId" asp-for="pageid" asp-items="@(new SelectList(Model.pagelist,"id","pagename"))">
+                            <select required class="form-control" id="pageId" asp-for="pageid" asp-items="@(new SelectList(Model.pagelist,"id","pagename"))">
+                                <option value="" selected>--- SELECT ---</option>
                             </select>
 
 

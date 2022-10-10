@@ -50,14 +50,14 @@ namespace App.Controllers
                 rolelist = await tbl_roleService.GetAll_TblRole();
                 pagelist = await tbl_pageservice.GetAll_tbl_pages();
 
-                rolelist.Insert(0, new tbl_role { id = 0, rolename = "--Select Role Name--" });
-                pagelist.Insert(0, new tbl_pages { id = 0, pagename = "--Select Page Name--" });
+               // rolelist.Insert(0, new tbl_role { id = 0, rolename = "--Select Role Name--" });
+                //pagelist.Insert(0, new tbl_pages { id = 0, pagename = "--Select Page Name--" });
             }
             else if (tabid == 4)
             {
                 userlist = await tbl_userService.GetAll_tbl_user();
                 rolelist = await tbl_roleService.GetAll_TblRole();
-                rolelist.Insert(0, new tbl_role { id = 0, rolename = "--Select Role Name--" });
+               // rolelist.Insert(0, new tbl_role { id = 0, rolename = "--Select Role Name--" });
             }
 
 
