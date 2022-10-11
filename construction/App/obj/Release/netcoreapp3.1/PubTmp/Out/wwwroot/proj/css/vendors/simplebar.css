@@ -153,5 +153,5 @@
 }
 
 #sidebar.sidebar-narrow-unfoldable ~ .wrapper {
-    padding-left: 0px;
+    padding-left: 64px;
 }
