@@ -82,25 +82,27 @@ namespace App.Service
         }
         public async Task<int> Delete_tbl_user(int? Id)
         {
-            int result = 0;
-
             if (db != null)
             {
                 //Find the data for specific data id
-                var val = await db.tbl_user.FirstOrDefaultAsync(x => x.id == Id);
+                var e = await db.tbl_user.FirstOrDefaultAsync(x => x.id == Id);
 
-                if (val != null)
+                if (e != null)
                 {
+                    e.IsActive = false;
+                    await this.Update_tbl_user(e);
+                    return 1;
+
                     //Delete that data
-                    db.tbl_user.Remove(val);
+                    //db.tbl_user.Remove(val);
 
                     //Commit the transaction
-                    result = await db.SaveChangesAsync();
+                    //result = await db.SaveChangesAsync();
                 }
-                return result;
+                return 0;
             }
 
-            return result;
+            return 0;
         }
 
         public Task Add_tbl_user(usermodel m)
@@ -110,6 +112,7 @@ namespace App.Service
                 username = m.username,
                 pswd = m.pswd,
                 roleid = m.roleid,
+                IsActive = true,
                 createddate = System.DateTime.Now,
             };
             return this.Add_tbl_user(e);

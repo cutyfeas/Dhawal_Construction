@@ -86,7 +86,6 @@ namespace App.Service
                     roleid = 2,
                     createddate = DateTime.Now,
                     IsActive = true,
-
                 };
                 await db.tbl_user.AddAsync(entity);
                 await db.SaveChangesAsync();

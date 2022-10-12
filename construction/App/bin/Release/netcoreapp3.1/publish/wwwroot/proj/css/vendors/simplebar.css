@@ -155,3 +155,41 @@
 #sidebar.sidebar-narrow-unfoldable ~ .wrapper {
     padding-left: 64px;
 }
+
+@media screen and (max-width: 1024px) {
+    main {
+        height: 90vh !important;
+    }
+
+    #sidebar ~ .wrapper {
+        padding-left: 0px !important;
+    }
+
+    .user-details div.card .card-body {
+        padding: 15px 5px !important;
+    }
+
+        .user-details div.card .card-body .rounded-pill {
+            width: 100% !important;
+            margin-bottom: 16px;
+        }
+
+    table a.btn {
+        margin-bottom: 4px;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header {
+        padding: 0px 12px;
+    }
+
+    main {
+        padding: 0 12px !important;
+    }
+}
+
+.btn-link:focus {
+    box-shadow: none;
+}

@@ -191,7 +191,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if (Model.beneficiarylist != null)
+                            @if (Model.beneficiarylist != null && Model.tabid==1)
                             {
                                 @foreach (var x in Model.beneficiarylist)
                                 {

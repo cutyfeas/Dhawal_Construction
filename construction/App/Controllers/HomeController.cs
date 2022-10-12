@@ -37,11 +37,7 @@ namespace App.Controllers
                 HttpContext.Session.SetString("token", result.AccessToken);
                 HttpContext.Session.SetInt32("userid", result.userid);
                 HttpContext.Session.SetString("roleid", result.roleid.ToString());
-
-                if (result.roleid == 1)
-                    return RedirectToRoute("rolelist");
-                else
-                    return RedirectToRoute("rolelist");
+                return RedirectToRoute("rolelist");
                 //return RedirectToRoute("AddEditUser", new { result.Data.Id });
             }
             else
