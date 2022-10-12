@@ -121,6 +121,11 @@ namespace App.Entity
                     .WithMany(p => p.tbl_beneficiary)
                     .HasForeignKey(d => d.apartmentid)
                     .HasConstraintName("FK_tbl_beneficiary_tbl_apartment");
+
+                entity.HasOne(d => d.condominium)
+                    .WithMany(p => p.tbl_beneficiary)
+                    .HasForeignKey(d => d.condominiumid)
+                    .HasConstraintName("FK__tbl_benef__condo__00200768");
             });
 
             modelBuilder.Entity<tbl_beneficiary_choice_map>(entity =>

@@ -47,6 +47,7 @@ C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\
 C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\proj\css\style.css
 C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\proj\css\vendors\all.min.css
 C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\proj\css\vendors\simplebar.css
+C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\proj\customer.html
 C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\proj\js\all.min.js
 C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\proj\js\dataTables.autoFill.min.js
 C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\proj\js\dataTables.bootstrap4.min.js

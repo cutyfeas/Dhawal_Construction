@@ -1,0 +1,245 @@
+﻿@model App.Models.beneficiarymodel
+
+@{
+    var isactive = Model.tabid == 1 ? "active" : "inactive";
+}
+
+
+
+<div class="tab-pane @isactive" id="customer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <form asp-controller="beneficiary" asp-action="addbeneficiary" id="condominium-data" method="post" class="form">
+                    <input type="hidden" asp-for="tabid">
+                    <input type="hidden" asp-for="beneficiary.id">
+                    <div class="row">
+                         <div class="col-md-6 mb-3">
+                            <label for="condominium-id"
+                                   class="form-label fw-semibold">
+                                CONDOMINIUM ID
+                                :
+                            </label>
+                            <select required class="form-control" id="condominium-id" asp-for="beneficiary.condominiumid" asp-items="@(new SelectList(Model.condominiumlist,"id","condominium_name"))">
+                                <option value="" selected>--- SELECT ---</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="apartment-id"
+                                   class="form-label fw-semibold">
+                                APARTMENT ID
+                                :
+                            </label>
+
+                            <select required class="form-control" id="apartment-id" asp-for="beneficiary.apartmentid" asp-items="@(new SelectList(Model.appartmentlist,"id","area"))">
+                                <option value="" selected>--- SELECT ---</option>
+                            </select>
+                          
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="client-id"
+                                   class="form-label fw-semibold">CLIENT ID :</label>
+                            <input required asp-for="beneficiary.clientid" type="text" class="form-control" id="client-id">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="sqm" class="form-label fw-semibold">
+                                SQM
+                                :
+                            </label>
+                            <input required asp-for="beneficiary.sqm" type="tel" class="form-control" id="sqm">
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="first-name"
+                                   class="form-label fw-semibold">
+                                FIRST NAME
+                                :
+                            </label>
+                            <input required asp-for="beneficiary.firstname" type="text" class="form-control" id="first-name">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="last-name"
+                                   class="form-label fw-semibold">LAST NAME</label>
+                            <input required asp-for="beneficiary.lastname" type="text" class="form-control" id="last-name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="tax-code" class="form-label fw-semibold">
+                                TAX
+                                CODE :
+                            </label>
+                            <input required asp-for="beneficiary.taxcode" type="text" class="form-control" id="tax-code">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label fw-semibold">
+                                EMAIL
+                                :
+                            </label>
+                            <input required asp-for="beneficiary.email" type="email" class="form-control" id="email">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label fw-semibold">
+                                PHONE
+                                NUMBER
+                                :
+                            </label>
+                            <input required asp-for="beneficiary.phone" type="tel" class="form-control" id="phone">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="sheet" class="form-label fw-semibold">
+                                SHEET
+                                :
+                            </label>
+                            <input required asp-for="beneficiary.Sheet" type="tel" class="form-control" id="sheet">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="users" class="form-label fw-semibold">
+                                PARCEL
+                                :
+                            </label>
+                            <input required asp-for="beneficiary.Parcel" type="tel" class="form-control" id="parcel">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="subdivision"
+                                   class="form-label fw-semibold">SUBDIVISION :</label>
+
+                            <input required type="text" asp-for="beneficiary.Subdivision" class="form-control" id="subdivision" />
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="buildings"
+                                   class="form-label fw-semibold">
+                                BUILDINGS
+                                :
+                            </label>
+
+                            <input required type="text" asp-for="beneficiary.building" class="form-control" id="buildings" />
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="staircase"
+                                   class="form-label fw-semibold">STAIRCASE :</label>
+                            <input required asp-for="beneficiary.staircase" type="text" class="form-control" id="sheet">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="interior"
+                                   class="form-label fw-semibold">
+                                INTERIOR
+                                :
+                            </label>
+                            <input required asp-for="beneficiary.interior" type="text" class="form-control" id="interior">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cadastral-category"
+                                   class="form-label fw-semibold">
+                                CADASTRAL CATEGORY
+                                :
+                            </label>
+                            <input required asp-for="beneficiary.cadastralcategory" type="tel" class="form-control"
+                                   id="cadastral-category">
+                        </div>
+                       
+                    </div>
+                    <button type="submit"
+                            class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end ">
+                        submit
+                    </button>
+                </form>
+
+
+
+
+                <div class="list-view">
+                    <table id="customer-list" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>CONDOMINIUM ID</th>
+                                <th>APARTMENT ID</th>
+                                <th>CLIENT ID</th>
+                               
+                                <th>FIRST NAME</th>
+                                <th>LAST NAME</th>
+                                <th>TAX CODE</th>
+                                <th>EMAIL </th>
+                                <th>PHONE NUMBER</th>
+                                <th>SHEET</th>
+                                <th>PARCEL</th>
+                                <th>SUBDIVISION</th>
+                                <th>BUILDINGS</th>
+                                <th>STAIRCASE</th>
+                                <th>INTERIOR</th>
+                                <th>CADASTRAL CATEGORY</th>
+                                <th>SQM</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.beneficiarylist != null)
+                            {
+                                @foreach (var x in Model.beneficiarylist)
+                                {
+                                    <tr>
+                                        <td>@x.id</td>
+                                        <td>@x.condominium.condominium_name</td>
+                                        <td>@x.apartment.area</td>
+                                        <td>@x.clientid</td>
+                                       
+                                        <td>@x.firstname</td>
+                                        <td>@x.lastname</td>
+                                        <td>@x.taxcode</td>
+                                        <td>@x.email</td>
+                                        <td>@x.phone</td>
+                                        <td>@x.Sheet</td>
+                                        <td>@x.Parcel</td>
+                                        <td>
+                                            <span class="badge bg-success-gradient">@x.Subdivision</span>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-success-gradient">@x.building</span>
+                                        </td>
+                                        <td>
+                                            @x.staircase
+                                        </td>
+                                        <td>
+                                            @x.interior
+                                        </td>
+                                        <td>
+                                            @x.cadastralcategory
+                                        </td>
+                                        <td>
+                                            @x.sqm
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-success me-2" href="\beneficiary\editbeneficiary\@x.id">
+                                                <i class="cil-pencil icon icon-sm"></i>
+                                            </a>
+                                            <a class="btn btn-info me-2" href="\beneficiary\deletebeneficiary\@x.id">
+                                                <i class="cil-trash icon icon-sm"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

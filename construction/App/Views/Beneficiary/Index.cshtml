@@ -1,0 +1,93 @@
+﻿@model App.Models.beneficiarymodel
+@{
+    Layout = "~/Views/_adminlayout.cshtml";
+    var breadcrumb = Model.tabid == 1 ? "Beneficiary" : "Beneficiary Map";
+}
+
+
+<div class="wrapper d-flex flex-column min-vh-100 bg-light bg-opacity-50 dark:bg-transparent">
+    <partial name="/Views/_adminheader.cshtml">
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-4">
+                                <li class="breadcrumb-item">
+                                    <span>Home</span>
+                                </li>
+                                <li class="breadcrumb-item active"><span>@breadcrumb</span></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+
+                <div class="row user-details">
+                    <div class="col-lg-12">
+                        <!-- Tabs with icons on Card -->
+                        <div class="card card-nav-tabs">
+                            <div class="card-header card-header-primary">
+                                <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                                <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper">
+                                        <ul class="nav nav-tabs" data-tabs="tabs">
+                                            <li class="nav-item">
+
+                                                @if (Model.tabid == 1)
+                                                {
+                                                    <a href="/beneficiary/viewbeneficiary" class="nav-link active" data-coreui-target="#customer"
+                                                   >
+                                                        Customer Info
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a href="/beneficiary/viewbeneficiary" class="nav-link" data-coreui-target="#customer"
+                                                   >
+                                                        Customer Info
+                                                    </a>
+                                                }
+
+
+                                            </li>
+                                            <li class="nav-item">
+
+                                                @if (Model.tabid == 2)
+                                                {
+
+                                                    <a href="/beneficiary/viewbeneficiary_map" class="nav-link active" data-coreui-target="#customerchoice"
+                                                   >
+                                                        Customer Choice
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <a href="/beneficiary/viewbeneficiary_map" class="nav-link" data-coreui-target="#customerchoice"
+                                                  >
+                                                        Customer Choice
+                                                    </a>
+                                                }
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <div class="tab-content rounded-bottom">
+
+                                    <partial name="_beneficiary" for="@Model">
+                                        <partial name="_beneficiary_map" for="@Model">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Tabs with icons on Card -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <partial name="/Views/_adminfooter.cshtml">
+
+</div>

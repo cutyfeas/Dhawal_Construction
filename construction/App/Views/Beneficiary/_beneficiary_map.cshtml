@@ -1,0 +1,83 @@
+﻿@model App.Models.beneficiarymodel
+
+@{
+    var isactive = Model.tabid == 2 ? "active" : "inactive";
+}
+
+
+<div class="tab-pane @isactive" id="customerchoice">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-controller="beneficiary" asp-action="addbeneficiary_map" id="apartments-data" method="post" class="form">
+                    <input type="hidden" asp-for="tabid">
+                    <input type="hidden" asp-for="beneficiary_map.id">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="customer-id"
+                                   class="form-label fw-semibold">CUSTOMER ID:</label>
+
+                            <select required class="form-control" id="customer-id" asp-for="beneficiary_map.ben_id" asp-items="@(new SelectList(Model.beneficiarylist,"id","firstname"))">
+                                <option value="" selected>--- SELECT ---</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="mastertypeid"
+                                   class="form-label fw-semibold">
+                                MASTER TYPE ID
+                                :
+                            </label>
+                            <select required class="form-control" id="mastertypeid" asp-for="beneficiary_map.mastertypeid" asp-items="@(new SelectList(Model.mastertypelist,"id","description"))">
+                                <option value="" selected>--- SELECT ---</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end ">
+                        Submit
+                    </button>
+                </form>
+
+
+
+
+
+                <div class="list-view">
+                    <table id="customer-choice-list" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>CUSTOMER ID</th>
+                                <th>MASTER TYPE ID</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.beneficiary_maplist != null)
+                            {
+                                @foreach (var x in Model.beneficiary_maplist)
+                                {
+                                    <tr>
+                                        <td>@x.id</td>
+                                        <td>@x.ben.firstname @x.ben.lastname</td>
+                                        <td>@x.mastertype.description</td>
+                                        <td>
+                                            <a class="btn btn-success me-2" href="\beneficiary\editbeneficiary_map\@x.id">
+                                                <i class="cil-pencil icon icon-sm"></i>
+                                            </a>
+                                            <a class="btn btn-info me-2" href="\beneficiary\deletebeneficiary_map\@x.id">
+                                                <i class="cil-trash icon icon-sm"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

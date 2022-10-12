@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Constructions App</title>
+
+    <link rel="stylesheet" href="vendors/simplebar/css/simplebar.css">
+    <link rel="stylesheet" href="css/vendors/simplebar.css">
+    <link rel="stylesheet" href="vendors/@coreui/icons/css/brand.css">    
+    <link rel="stylesheet" href="vendors/@coreui/icons/css/flag.css">    
+    <link rel="stylesheet" href="vendors/@coreui/icons/css/free.css">
+<link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/brand.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/flag.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/examples.css" rel="stylesheet">
+    <link href="vendors/@coreui/icons/css/all.min.css">
+    <link rel="stylesheet" href="css/dataTables.jqueryui.min.css">
+    <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/DataTables/datatables.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+</head>
+
+<body>
+    <div class="sidebar sidebar-dark sidebar-fixed bg-dark-gradient" id="sidebar">
+        <div class="sidebar-brand d-none d-md-flex">
+            <a href="#" class="sidebar-brand-full" width="118" height="46" alt="Construction App">
+                Constructions App
+            </a>
+            <a href="#" class="sidebar-brand-narrow" width="46" height="46" alt="Construction App">
+                Constructions App
+            </a>
+            <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+        </div>
+        <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="">
+                    Apartment and building
+                </a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <span class="nav-icon"></span>
+                            Apartment and building
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <span class="nav-icon"></span>
+                            Apartment Master Data
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-divider"></li>
+            <li class="nav-title">Master Data information</li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Master TYPES
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    LEAF Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Boiler Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    AIR CONDITIONER Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Water Heater Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    RADIATOR Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Curtains Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Suppliers Master Data
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                    Master data QUOTES
+                </a>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="">
+                    PREFABILITY Master Data
+                </a>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="">
+                    Condominium master data
+                </a>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    Customer data
+                </a>
+                <ul class="nav-group-items">
+                    <li class="nav-item"><a class="nav-link" href=""> Add Apartment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Delete Apartment</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="sidebar sidebar-light sidebar-lg sidebar-end sidebar-overlaid hide" id="aside">
+        <div class="sidebar-header bg-transparent p-0">
+            <button class="sidebar-close" type="button" data-coreui-close="sidebar">
+                <svg class="icon">
+                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-x"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light bg-opacity-50 dark:bg-transparent">
+        <header class="header header-sticky mb-4">
+            <div class="container-fluid">
+                <button class="header-toggler px-md-0 me-md-3 d-md-none" type="button"
+                    onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+                    <svg class="icon icon-lg">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+                    </svg>
+                </button>
+                <a class="header-brand d-md-none" href="#">
+
+                </a>
+                <form class="d-flex" role="search">
+                    <div class="input-group"><span class="input-group-text bg-light border-0 px-1" id="search-addon">
+                            <svg class="icon icon-lg my-1 mx-2 text-disabled">
+                                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-search"></use>
+                            </svg></span>
+                        <input class="form-control bg-light border-0" type="text" placeholder="Search..."
+                            aria-label="Search" aria-describedby="search-addon">
+                    </div>
+                </form>
+                <ul class="header-nav ms-auto me-3">
+
+                </ul>
+                <ul class="header-nav me-4">
+                    <li class="nav-item dropdown d-flex align-items-center"><a class="nav-link py-0"
+                            data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            <div class="avatar avatar-md">
+                                <img class="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com">
+                                <span class="avatar-status bg-success"></span>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end pt-0">
+                            <div class="dropdown-header bg-light py-2 dark:bg-white dark:bg-opacity-10">
+                                <div class="fw-semibold">Account</div>
+                            </div>
+                            <a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
+                                </svg> Updates<span class="badge badge-sm bg-info-gradient ms-2">42</span>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
+                                </svg> Messages<span class="badge badge-sm badge-sm bg-success ms-2">42</span>
+                            </a>
+
+                            <div class="dropdown-header bg-light py-2 dark:bg-white dark:bg-opacity-10">
+                                <div class="fw-semibold">Settings</div>
+                            </div>
+                            <a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+                                </svg>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+                                </svg>
+                                Settings
+                            </a>
+
+                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                                </svg> Account Info</a><a class="dropdown-item" href="#">
+                                <svg class="icon me-2">
+                                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+                                </svg> Logout</a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="header-toggler px-md-0 me-md-3" type="button"
+                    onclick="coreui.Sidebar.getInstance(document.querySelector('#aside')).show()">
+                    <svg class="icon icon-lg">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-applications-settings"></use>
+                    </svg>
+                </button>
+            </div>
+        </header>
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-4">
+                                <li class="breadcrumb-item">
+                                    <span>Home</span>
+                                </li>
+                                <li class="breadcrumb-item active"><span>Customer</span></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+
+                <div class="row user-details">
+                    <div class="col-lg-12">
+                        <!-- Tabs with icons on Card -->
+                        <div class="card card-nav-tabs">
+                            <div class="card-header card-header-primary">
+                                <!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                                <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper">
+                                        <ul class="nav nav-tabs" data-tabs="tabs">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-coreui-target="#customer"
+                                                    data-coreui-toggle="tab">
+                                                    Customer Info
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-coreui-target="#customerchoice"
+                                                    data-coreui-toggle="tab">
+                                                    Customer Choice
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <div class="tab-content rounded-bottom">
+                                    <div class="tab-pane active" id="customer">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12 col-lg-12">
+                                                    <form id="condominium-data" action="" method="" class="form">
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="ID"
+                                                                    class="form-label fw-semibold">ID:</label>
+                                                                <input type="text" class="form-control" id="ID">
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="apartment-id"
+                                                                    class="form-label fw-semibold">APARTMENT ID
+                                                                    :</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="apartment-id">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="client-id"
+                                                                    class="form-label fw-semibold">CLIENT ID :</label>
+                                                                <input type="text" class="form-control" id="client-id">
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="condominium-id"
+                                                                    class="form-label fw-semibold">CONDOMINIUM ID
+                                                                    :</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="condominium-id">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="first-name"
+                                                                    class="form-label fw-semibold">FIRST NAME
+                                                                    :</label>
+                                                                <input type="text" class="form-control" id="first-name">
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="last-name"
+                                                                    class="form-label fw-semibold">LAST NAME</label>
+                                                                <input type="text" class="form-control" id="last-name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 mb-3">
+                                                                <label for="tax-code" class="form-label fw-semibold">TAX
+                                                                    CODE :</label>
+                                                                <input type="number" class="form-control" id="tax-code">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="email" class="form-label fw-semibold">EMAIL
+                                                                    :</label>
+                                                                <input type="email" class="form-control" id="email">
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="phone" class="form-label fw-semibold">PHONE
+                                                                    NUMBER
+                                                                    :</label>
+                                                                <input type="tel" class="form-control" id="phone">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="sheet" class="form-label fw-semibold">SHEET
+                                                                    :</label>
+                                                                <input type="tel" class="form-control" id="sheet">
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="users" class="form-label fw-semibold">PARCEL
+                                                                    :</label>
+                                                                <input type="tel" class="form-control" id="parcel">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="subdivision"
+                                                                    class="form-label fw-semibold">SUBDIVISION :</label>
+                                                                <select class="form-multi-select" id="subdivision"
+                                                                    multiple data-coreui-search="true">
+                                                                    <option value="0">Bangalore</option>
+                                                                    <option value="1">Bangalore</option>
+                                                                    <option value="2">Bangalore</option>
+                                                                    <option value="3">Bangalore</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="buildings"
+                                                                    class="form-label fw-semibold">BUILDINGS
+                                                                    :</label>
+                                                                <select class="form-multi-select" id="buildings"
+                                                                    multiple data-coreui-search="true">
+                                                                    <option value="0">Bangalore</option>
+                                                                    <option value="1">Bangalore</option>
+                                                                    <option value="2">Bangalore</option>
+                                                                    <option value="3">Bangalore</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="staircase"
+                                                                    class="form-label fw-semibold">STAIRCASE :</label>
+                                                                <input type="text" class="form-control" id="sheet">
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="interior"
+                                                                    class="form-label fw-semibold">INTERIOR
+                                                                    :</label>
+                                                                <input type="text" class="form-control" id="interior">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="cadastral-category"
+                                                                    class="form-label fw-semibold">CADASTRAL CATEGORY
+                                                                    :</label>
+                                                                <input type="tel" class="form-control"
+                                                                    id="cadastral-category">
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="sqm" class="form-label fw-semibold">SQM
+                                                                    :</label>
+                                                                <input type="tel" class="form-control" id="sqm">
+                                                            </div>
+                                                        </div>
+                                                        <button type="submit"
+                                                            class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end ">Add
+                                                            Customer</button>
+                                                    </form>
+                                                    <div class="list-view">
+                                                        <table id="customer-list" class="display" style="width:100%">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>ID</th>
+                                                                    <th>APARTMENT ID</th>
+                                                                    <th>CLIENT ID</th>
+                                                                    <th>CONDOMINIUM ID</th>
+                                                                    <th>FIRST NAME</th>
+                                                                    <th>LAST NAME</th>
+                                                                    <th>TAX CODE</th>
+                                                                    <th>EMAIL </th>
+                                                                    <th>PHONE NUMBER</th>
+                                                                    <th>SHEET</th>
+                                                                    <th>PARCEL</th>
+                                                                    <th>SUBDIVISION</th>
+                                                                    <th>BUILDINGS</th>
+                                                                    <th>STAIRCASE</th>
+                                                                    <th>INTERIOR</th>
+                                                                    <th>CADASTRAL CATEGORY</th>
+                                                                    <th>SQM</th>
+                                                                    <th>ACTIONS</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>2</td>
+                                                                    <td>3</td>
+                                                                    <td>First Name</td>
+                                                                    <td>Last Name</td>
+                                                                    <td>401</td>
+                                                                    <td>test@test.com</td>
+                                                                    <td>0123456789</td>
+                                                                    <td>Excel</td>
+                                                                    <td>Cover</td>
+                                                                    <td>
+                                                                        <span class="badge bg-success-gradient">Tumkur</span>
+                                                                        <span class="badge bg-success-gradient">Bangalore</span>
+                                                                    </td>
+                                                                    <td><span
+                                                                        class="badge bg-success-gradient">Apartment</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        Test
+                                                                    </td>
+                                                                    <td>
+                                                                        Test
+                                                                    </td>
+                                                                    <td>
+                                                                        Test
+                                                                    </td>
+                                                                    <td>
+                                                                        Test
+                                                                    </td>
+                                                                    <td>
+                                                                        <a class="btn btn-success me-2" href="#">
+                                                                            <i class="cil-pencil icon icon-sm"></i>
+                                                                        </a>
+                                                                        <a class="btn btn-info me-2" href="#deleteModal">
+                                                                            <i class="cil-trash icon icon-sm"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="customerchoice">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <form id="apartments-data" action="" method="" class="form">
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="ID"
+                                                                    class="form-label fw-semibold">ID:</label>
+                                                                <input type="text" class="form-control" id="ID">
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="customer-id"
+                                                                    class="form-label fw-semibold">CUSTOMER ID:</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="customer-id">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="mastertypeid"
+                                                                    class="form-label fw-semibold">MASTER TYPE ID
+                                                                    :</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="mastertypeid">
+                                                            </div>
+                                                        </div>
+
+                                                        <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end ">Add
+                                                            Customer Choice</button>
+                                                    </form>
+                                                    <div class="list-view">
+                                                        <table id="customer-choice-list" class="display" style="width:100%">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>ID</th>
+                                                                    <th>CUSTOMER ID</th>
+                                                                    <th>MASTER TYPE ID</th>
+                                                                    <th>ACTIONS</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>2</td>                                                                    
+                                                                    <td>
+                                                                        <a class="btn btn-success me-2" href="#">
+                                                                            <i class="cil-pencil icon icon-sm"></i>
+                                                                        </a>
+                                                                        <a class="btn btn-info me-2" href="#deleteModal1">
+                                                                            <i class="cil-trash icon icon-sm"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Tabs with icons on Card -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="viewModalLabel">User Details</h5>
+                  <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure want to delete user with all details ?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-dark" data-coreui-dismiss="modal">Back</button>
+                  <button type="button" class="btn btn-danger">Delete User</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="modal fade" id="deleteModal1" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="viewModalLabel">User Details</h5>
+                  <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure want to delete user with all details ?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-dark" data-coreui-dismiss="modal">Back</button>
+                  <button type="button" class="btn btn-danger">Delete User</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <footer class="footer">
+            <div><a href="#">By Admin </a><a href="">Construction</a> © 2022 </div>
+            <div class="ms-auto">Powered by&nbsp;<a href="">Team</a></div>
+        </footer>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="vendors/@coreui/icons/js/index.js"></script>
+    <script src="js/dataTables.bootstrap4.min.js"></script>    
+    <script src="js/jquery.dataTables.js"></script>
+    <script src="vendors/@coreui/coreui-pro/js/coreui.bundle.min.js"></script>
+    <script src="vendors/simplebar/js/simplebar.min.js"></script>
+    <script src="vendors/chart.js/js/chart.min.js"></script>
+    <script src="vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
+    <script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
+    <script src="js/main.js"></script>
+    <script src="vendors/DataTables/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#customer-list').DataTable();
+            $('#customer-choice-list').DataTable();
+        });
+    </script>
+</body>
+
+</html>

@@ -1040,3 +1040,6 @@ C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\
 C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\Appartment\Index.cshtml.g.cs
 C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\Appartment\_appartment.cshtml.g.cs
 C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\Appartment\_condominium.cshtml.g.cs
+C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\Beneficiary\Index.cshtml.g.cs
+C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\Beneficiary\_beneficiary.cshtml.g.cs
+C:\Users\DPanchalTech\Documents\vishal\Dhawal_Construction\construction\App\obj\Debug\netcoreapp3.1\Razor\Views\Beneficiary\_beneficiary_map.cshtml.g.cs

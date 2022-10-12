@@ -35,6 +35,7 @@ namespace App.Entity
         public DateTime? updateddate { get; set; }
 
         public virtual tbl_apartment apartment { get; set; }
+        public virtual tbl_condominium condominium { get; set; }
         public virtual ICollection<tbl_beneficiary_choice_map> tbl_beneficiary_choice_map { get; set; }
     }
 }

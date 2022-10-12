@@ -10,6 +10,7 @@ namespace App.Entity
         public tbl_condominium()
         {
             tbl_apartment = new HashSet<tbl_apartment>();
+            tbl_beneficiary = new HashSet<tbl_beneficiary>();
         }
 
         public int id { get; set; }
@@ -30,5 +31,6 @@ namespace App.Entity
         public DateTime? updateddate { get; set; }
 
         public virtual ICollection<tbl_apartment> tbl_apartment { get; set; }
+        public virtual ICollection<tbl_beneficiary> tbl_beneficiary { get; set; }
     }
 }
