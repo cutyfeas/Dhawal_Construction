@@ -35,8 +35,8 @@
                                             <use xlink:href="~/proj/vendors/@@coreui/icons/svg/free.svg#cil-user"></use>
                                         </svg>
                                     </span>
-                                    @*<input class="form-control" type="text" placeholder="Username">*@
-                                    @Html.TextBoxFor(model => model.username, new { @class = "form-control", type="text", @id = "exampleInputEmail1", placeholder = "Username" })
+                                    <input required asp-for="username" class="form-control" type="text" placeholder="Username">
+                                    @* @Html.TextBoxFor(model => model.username, new { @class = "form-control", type="text", @id = "exampleInputEmail1", placeholder = "Username" })*@
                                 </div>
                                 @*<div class="input-group mb-3">
                             <span class="input-group-text">
@@ -52,8 +52,8 @@
                                             <use xlink:href="~/proj/vendors/@@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                                         </svg>
                                     </span>
-                                    @*<input class="form-control" type="password" placeholder="Password">*@
-                                    @Html.PasswordFor(model => model.pswd, new { @class = "form-control", @id = "exampleInputPassword1", placeholder = "Password" })
+                                    <input required asp-for="pswd" id="pswd" class="form-control" type="password" placeholder="Password">
+                                    @*@Html.PasswordFor(model => model.pswd, new { @class = "form-control", @id = "exampleInputPassword1", placeholder = "Password" })*@
                                 </div>
                                 <div class="input-group mb-4">
                                     <span class="input-group-text">
@@ -61,8 +61,8 @@
                                             <use xlink:href="~/proj/vendors/@@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                                         </svg>
                                     </span>
-                                    @*<input class="form-control" type="password" placeholder="Repeat password">*@
-                                    @Html.PasswordFor(model => model.pswd, new { @class = "form-control", @id = "exampleInputPassword1", placeholder = "Repeat password" })
+                                    <input required asp-for="pswd" id="rep_pswd" class="form-control" type="password" placeholder="Repeat password">
+                                    @* @Html.PasswordFor(model => model.pswd, new { @class = "form-control", @id = "exampleInputPassword1", placeholder = "Repeat password" })*@
                                 </div>
                                 <button class="btn btn-block btn-success" type="submit">Create Account</button>
                             }

@@ -1,5 +1,6 @@
 ﻿using App.Entity;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace App.Models
 {
@@ -25,6 +26,7 @@ namespace App.Models
 
         public tbl_beneficiary_choice_map beneficiary_map { get; set; }
         public List<tbl_beneficiary_choice_map> beneficiary_maplist { get; set; }
+        public int[] mastertypeids { get; set; }
 
 
         public List<tbl_condominium> condominiumlist { get; set; }

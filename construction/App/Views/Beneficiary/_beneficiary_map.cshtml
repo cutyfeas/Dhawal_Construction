@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form asp-controller="beneficiary" asp-action="addbeneficiary_map" id="apartments-data" method="post" class="form">
+                <form asp-controller="beneficiary" asp-action="addbeneficiary_map" id="frm_benificiary_map" method="post" class="form">
                     <input type="hidden" asp-for="tabid">
                     <input type="hidden" asp-for="beneficiary_map.id">
 
@@ -29,13 +29,14 @@
                                 MASTER TYPE ID
                                 :
                             </label>
-                            <select required class="form-control" id="mastertypeid" asp-for="beneficiary_map.mastertypeid" asp-items="@(new SelectList(Model.mastertypelist,"id","description"))">
-                                <option value="" selected>--- SELECT ---</option>
+                            <select required class="form-control selectpicker" id="mastertypeids" asp-for="mastertypeids" asp-items="@(new MultiSelectList(Model.mastertypelist,"id","description"))" data-actions-box="true" data-live-search="true" multiple>
+                                @*<option value="">--- SELECT ---</option>*@
                             </select>
+                            <span asp-validation-for="mastertypeids" class="text-danger"></span>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end ">
+                    <button type="submit" id="btn_benificiary_map" class="btn btn-info rounded-pill w-25 mt-3 mb-3 fw-semibold text-light text-center ms-auto text-uppercase justify-content-end ">
                         Submit
                     </button>
                 </form>
@@ -81,3 +82,32 @@
         </div>
     </div>
 </div>
+
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#mastertypeids').selectpicker('selectAll');
+        });
+    </script>
+
+<script type="text/javascript">
+    //$('#mastertypeids').multiselect({
+    //    includeSelectAllOption: true,
+    //});
+    //$(function () {
+
+       
+
+
+    //    $("#btn_benificiary_map").click(function () {
+
+           
+
+
+    //        console.log($("#frm_benificiary_map"));
+    //    })
+    //})
+
+</script>
+}

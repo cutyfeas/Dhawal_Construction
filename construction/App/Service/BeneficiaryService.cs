@@ -149,14 +149,20 @@ namespace App.Service
 
         public async Task<int> Add_beneficiary_map(beneficiarymodel m)
         {
-            var e = m.beneficiary_map;
-            e.createddate = DateTime.Now;
+            var list = new List<tbl_beneficiary_choice_map>();
+            foreach (var x in m.mastertypeids)
+            {
+                var e = m.beneficiary_map;
+                e.mastertypeid = x;
+                e.createddate = DateTime.Now;
+                list.Add(e);
+            }
             if (db != null)
             {
-                await db.tbl_beneficiary_choice_map.AddAsync(e);
+                await db.tbl_beneficiary_choice_map.AddRangeAsync(list);
                 await db.SaveChangesAsync();
 
-                return e.id;
+                return 1;
             }
             return 0;
         }

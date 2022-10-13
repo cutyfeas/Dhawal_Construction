@@ -39,16 +39,16 @@
                                         <span class="input-group-text">
                                             <i class="fa-solid fa-user"></i>
                                         </span>
-                                        @*<input class="form-control" type="text" placeholder="Username">*@
-                                        @Html.TextBoxFor(model => model.username, new { @class = "form-control", type="text", @id = "exampleInputEmail1", placeholder = "Username" })
+                                        <input required asp-for="username" class="form-control" type="text" placeholder="Username">
+                                      @*  @Html.TextBoxFor(model => model.username, new { @class = "form-control", type="text", @id = "exampleInputEmail1", placeholder = "Username" })*@
 
                                     </div>
                                     <div class="input-group mb-4">
                                         <span class="input-group-text">
                                             <i class="fa-solid fa-user-lock"></i>
                                         </span>
-                                        @*<input class="form-control" type="password" placeholder="Password">*@
-                                        @Html.PasswordFor(model => model.pswd, new { @class = "form-control", @id = "exampleInputPassword1", placeholder = "Password" })
+                                        <input required asp-for="pswd" class="form-control" type="password" placeholder="Password">
+                                       @* @Html.PasswordFor(model => model.pswd, new { @class = "form-control", @id = "exampleInputPassword1", placeholder = "Password" })*@
 
                                     </div>
                                     <div class="row">
@@ -67,10 +67,10 @@
                                 <div>
                                     <h2>Sign up</h2>
                                     <p>Sign up to get better recommendations with a free account.</p>
-                                    <a type="button" href="@Url.RouteUrl("Register")" class="btn btn-lg btn-outline-light mt-3" typeof="button">
+                                    @*<a type="button" href="@Url.RouteUrl("Register")" class="btn btn-lg btn-outline-light mt-3" typeof="button">
                                         Register
                                         Now!
-                                    </a>
+                                    </a>*@
                                 </div>
                             </div>
                         </div>

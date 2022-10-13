@@ -131,11 +131,11 @@ namespace App.Controllers
         [HttpPost]
         public async Task<IActionResult> addbeneficiary_map(beneficiarymodel m)
         {
-            if (m.beneficiary_map.id == 0)
-                await BeneficiaryService.Add_beneficiary_map(m);
-            else
-                await BeneficiaryService.Update_beneficiary_map(m);
-            return RedirectToAction("viewbeneficiary_map");
+                if (m.beneficiary_map.id == 0)
+                    await BeneficiaryService.Add_beneficiary_map(m);
+                else
+                    await BeneficiaryService.Update_beneficiary_map(m);
+                return RedirectToAction("viewbeneficiary_map");
         }
         public async Task<IActionResult> deletebeneficiary_map(int id)
         {
